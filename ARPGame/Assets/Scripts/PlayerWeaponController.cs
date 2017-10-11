@@ -19,19 +19,24 @@ public class PlayerWeaponController : MonoBehaviour {
 
     public void EquipWeapon(GameObject itemToEquip)
     {
-        if (rightHand.transform.GetChild(0).gameObject != null)
-        {
-            characterStats.RemoveStatBonuses(currentlyEquipped.GetComponent<IWeapon>().Stats);
-            Destroy(currentlyEquipped);   // will just be dropped or removed from slot in future
-        }
+        Debug.Log("In EquipWeapon() ");
+        //if (rightHand.transform.GetChild(0).gameObject != null)
+        //{
+        //    Debug.Log("Found weapon in hand already.");
+        //    characterStats.RemoveStatBonuses(currentlyEquipped.GetComponent<IWeapon>().Stats);
+        //    Destroy(currentlyEquipped);   // will just be dropped or removed from slot in future
+        //    Debug.Log("Weapon removed from hand.");
+        //}
         currentlyEquipped = itemToEquip;
+        Debug.Log("Equipping new weapon...");
         currentlyEquipped.transform.SetParent(rightHand.transform, false);
+        Debug.Log("New weapon \"In hand\".");
         if (currentlyEquipped.GetComponent<IProjectileWeapon>() != null)
         {
             currentlyEquipped.GetComponent<IProjectileWeapon>().ProjectileSpawn = projectileSpawn;
         }
         equippedIWeapon = currentlyEquipped.GetComponent<IWeapon>();
-        characterStats.AddStatBonuses(equippedIWeapon.Stats);
+        //characterStats.AddStatBonuses(equippedIWeapon.Stats);
         Debug.Log("Equipped: " + itemToEquip);
     }
 

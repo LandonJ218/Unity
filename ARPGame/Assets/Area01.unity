@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 269061430}
   m_Layer: 0
   m_Name: PlayerModel
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -2110,8 +2110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56d6955d9227c0c4a8469ef78d5cb073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerWeaponController: {fileID: 1938974697}
-  playerArmorController: {fileID: 1938974699}
 --- !u!114 &1938974699
 MonoBehaviour:
   m_ObjectHideFlags: 0
