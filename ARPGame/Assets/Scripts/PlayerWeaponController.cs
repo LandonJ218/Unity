@@ -19,8 +19,7 @@ public class PlayerWeaponController : MonoBehaviour {
 
     public void EquipWeapon(GameObject itemToEquip)
     {
-        currentlyEquipped = rightHand.transform.GetChild(0).gameObject;
-        if (currentlyEquipped != null)
+        if (rightHand.transform.GetChild(0).gameObject != null)
         {
             characterStats.RemoveStatBonuses(currentlyEquipped.GetComponent<IWeapon>().Stats);
             Destroy(currentlyEquipped);   // will just be dropped or removed from slot in future

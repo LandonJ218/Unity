@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : MonoBehaviour, IWeapon {
+public class Sword : Interactable, IWeapon {
 
     private Animator animator;
+    private InventoryController inventoryController;
 
     public List<BaseStat> Stats { get; set; }
 
@@ -32,5 +33,13 @@ public class Sword : MonoBehaviour, IWeapon {
             col.GetComponent<IEnemy>().TakeDamage(Stats[0].GetCalculatedStatValue());
         }
         Debug.Log("Hit: " + col.name);
+    }
+
+    public override void Interact()
+    {
+        inventoryController = interactingAgent.gameObject.GetComponent<InventoryController>();
+        if (inventoryController != null){
+            inventoryController.EquipItem(gameObject);
+        }
     }
 }
