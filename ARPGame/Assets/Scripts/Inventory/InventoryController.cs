@@ -5,8 +5,8 @@ using UnityEngine;
 public class InventoryController : MonoBehaviour {
 
     public static InventoryController Instance { get; set; }
-    public PlayerWeaponController playerWeaponController;
-    public PlayerArmorController playerArmorController;
+    public PlayerWeaponController playerWeaponController { get; set; }
+    public PlayerArmorController playerArmorController { get; set; }
     public List<Item> playerItems = new List<Item>();
 
     void Start()
@@ -20,6 +20,7 @@ public class InventoryController : MonoBehaviour {
             Instance = this;
         }
         playerWeaponController = gameObject.GetComponent<PlayerWeaponController>();
+        playerArmorController = gameObject.GetComponent<PlayerArmorController>();
 
     }
 
