@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Staff : MonoBehaviour, IWeapon, IProjectileWeapon {
+public class Staff : Equippable, IWeapon, IProjectileWeapon {
 
     private Animator animator;
-
-    public List<BaseStat> Stats { get; set; }
 
     public Transform ProjectileSpawn { get; set; }
     Fireball fireball;

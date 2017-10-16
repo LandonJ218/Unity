@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryItem : Interactable {
+public class InventoryItem : MonoBehaviour
+{
+    public string ObjectSlug { get; set; }
+    public string ItemName { get; set; }
+    public string Description { get; set; }
+    public string ActionName { get; set; }
+    public bool IsStatModifier { get; set; }
 
-    public override void Interact()
-    {
-        Debug.Log("Interacting with retrieveable item.");
-    }
 }

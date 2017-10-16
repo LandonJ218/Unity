@@ -23,7 +23,7 @@ public class PlayerWeaponController : MonoBehaviour {
         if (rightHand.transform.childCount > 0)
         {
             Debug.Log("Found weapon in hand already.");
-            characterStats.RemoveStatBonuses(currentlyEquipped.GetComponent<IWeapon>().Stats);
+            characterStats.RemoveStatBonuses(currentlyEquipped.GetComponent<Equippable>().Stats);
             Destroy(currentlyEquipped);   // will just be dropped or removed from slot in future
             Debug.Log("Weapon removed from hand.");
         }

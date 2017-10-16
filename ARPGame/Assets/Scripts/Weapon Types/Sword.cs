@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : Interactable, IWeapon {
+public class Sword : Equippable, IWeapon {
 
     private Animator animator;
-    private InventoryController inventoryController;
-
-    public List<BaseStat> Stats { get; set; }
 
     void Start()
     {
@@ -35,11 +32,4 @@ public class Sword : Interactable, IWeapon {
         Debug.Log("Hit: " + col.name);
     }
 
-    public override void Interact()
-    {
-        inventoryController = interactingAgent.gameObject.GetComponent<InventoryController>();
-        if (inventoryController != null){
-            inventoryController.EquipItem(gameObject);
-        }
-    }
 }

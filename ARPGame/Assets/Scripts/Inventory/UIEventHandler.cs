@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class UIEventHandler : MonoBehaviour {
 
-    public delegate void ItemEventHandler(Item item);
+    public delegate void ItemEventHandler(InventoryItem item);
     public static event ItemEventHandler OnItemAddedToInventory;
 
-	public static void ItemAddedToInventory(Item item)
+	public static void ItemAddedToInventory(InventoryItem item)
     {
         OnItemAddedToInventory(item);
     }

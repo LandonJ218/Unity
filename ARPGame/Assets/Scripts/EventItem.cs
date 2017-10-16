@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventItem : Interactable {
+public class EventItem : MonoBehaviour {
 
-    public override void Interact()
-    {
-        Debug.Log("Interacting with event item.");
-    }
+    
 }
