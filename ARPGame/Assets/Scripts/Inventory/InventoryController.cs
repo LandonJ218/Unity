@@ -22,6 +22,17 @@ public class InventoryController : MonoBehaviour {
 
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            if (GetComponent<InventoryController>().baggedItems.Count > 0)
+            {
+                GetComponent<InventoryController>().EquipItem((Equippable)GetComponent<InventoryController>().baggedItems[0]);
+            }
+        }
+    }
+
     public void TakeItem(InventoryItem targetItem)
     {
         baggedItems.Add(targetItem);

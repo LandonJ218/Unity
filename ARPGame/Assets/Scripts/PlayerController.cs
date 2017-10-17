@@ -40,13 +40,7 @@ public class PlayerController : MonoBehaviour {
         {
             GetInteractionClickAndHold();
         }
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            if (GetComponent<InventoryController>().baggedItems.Count > 0)
-            {
-                GetComponent<InventoryController>().EquipItem((Equippable)GetComponent<InventoryController>().baggedItems[0]);
-            }
-        }
+        
     }
 
     void GetInteractionClick()

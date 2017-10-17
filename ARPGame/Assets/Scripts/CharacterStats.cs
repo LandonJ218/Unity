@@ -8,9 +8,11 @@ public class CharacterStats : MonoBehaviour {
 
     void Start()
     {
-        stats.Add(new BaseStat("STR", 3)); 
-        stats[0].AddStatBonus(new StatBonus(5));
-        Debug.Log(stats[0].GetCalculatedStatValue());
+        stats.Add(new BaseStat("INT", 0));
+        stats.Add(new BaseStat("DEX", 0));
+        stats.Add(new BaseStat("STR", 0));
+
+        LogStats();
     }
 
     public void AddStatBonuses(List<BaseStat> statsToModify)
@@ -19,6 +21,7 @@ public class CharacterStats : MonoBehaviour {
         {
             stats.Find(x => x.StatName == stat.StatName).AddStatBonus(new StatBonus(stat.BaseValue));
         }
+        LogStats();
     }
 
     public void RemoveStatBonuses(List<BaseStat> statsToModify)
@@ -26,6 +29,16 @@ public class CharacterStats : MonoBehaviour {
         foreach (BaseStat stat in statsToModify)
         {
             stats.Find(x=> x.StatName == stat.StatName).RemoveStatBonus(new StatBonus(stat.BaseValue));
+        }
+        LogStats();
+    }
+
+    public void LogStats()
+    {
+        Debug.Log(gameObject + " stats:");
+        foreach (BaseStat stat in stats)
+        {
+            Debug.Log(stat.StatName + "  " + stat.GetCalculatedStatValue());
         }
     }
 }
