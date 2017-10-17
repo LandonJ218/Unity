@@ -4,9 +4,12 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour {
+
     NavMeshAgent playerAgent;
     GameObject currentTarget = null;
     private bool hasInteracted = true;
+
+
     
 	// Use this for initialization
 	void Start () {
@@ -20,10 +23,14 @@ public class PlayerController : MonoBehaviour {
             // Key to this check is that stoppingDistance is set to 0 when current destination in not interactable; hence those "clicks" won't call Interact()
             if (!hasInteracted && playerAgent.remainingDistance <= playerAgent.stoppingDistance)
             {
-                Interact();        
+                Interact();
             }
         }
+        GetInput();
+    }
 
+    void GetInput()
+    {
         if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
         {
             Debug.Log("Mouse click detected.");
@@ -32,6 +39,13 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetAxis("Fire1") > 0f)
         {
             GetInteractionClickAndHold();
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            if (GetComponent<InventoryController>().baggedItems.Count > 0)
+            {
+                GetComponent<InventoryController>().EquipItem((Equippable)GetComponent<InventoryController>().baggedItems[0]);
+            }
         }
     }
 
@@ -80,6 +94,10 @@ public class PlayerController : MonoBehaviour {
         if(currentTarget.GetComponent<InventoryItem>() != null)
         {
             GetComponent<InventoryController>().TakeItem(currentTarget.GetComponent<Equippable>());
+        }
+        if(currentTarget.GetComponent<NPC>() != null)
+        {
+            DialogueSystem.Instance.AddNewDialogue(currentTarget.GetComponent<NPC>().dialogue, currentTarget.name);
         }
         hasInteracted = true;
     }

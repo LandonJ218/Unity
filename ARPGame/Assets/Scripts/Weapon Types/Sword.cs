@@ -9,6 +9,12 @@ public class Sword : Equippable, IWeapon {
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
+
+        // For testing, these will be set in the procedural generation of equipment
+        BaseStat baseStat = new BaseStat("STR", 5);
+        Stats.Add(baseStat);
+        ItemName = name;
+        Slot = "MainHand";  
     }
 
     public void PerformAttack()

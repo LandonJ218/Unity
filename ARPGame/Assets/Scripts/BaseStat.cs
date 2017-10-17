@@ -13,12 +13,11 @@ public class BaseStat
     public List<StatBonus> BaseAdditives { get; set; }
 
 
-    public BaseStat(int baseValue, string statName, string statDescription)
+    public BaseStat(string statName, int baseValue)
     {
         BaseAdditives = new List<StatBonus>();
         BaseValue = baseValue;
-        StatName = statName;
-        StatDescription = statDescription;
+        StatName = statName;;
     }
 
     public void AddStatBonus(StatBonus statBonus)

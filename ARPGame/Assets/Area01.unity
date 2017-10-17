@@ -285,6 +285,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2a39fb171a485b409868e1f85f7f1fb, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &121264459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 121264460}
+  - component: {fileID: 121264461}
+  m_Layer: 0
+  m_Name: Inventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &121264460
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 121264459}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &121264461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 121264459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46eb0bfca249996468e0962e7fe25e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryPanel: {fileID: 1792590092}
+  scrollViewContent: {fileID: 1285848573}
 --- !u!1 &269061427
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +693,7 @@ GameObject:
   - component: {fileID: 526583053}
   - component: {fileID: 526583055}
   - component: {fileID: 526583054}
+  - component: {fileID: 526583056}
   m_Layer: 5
   m_Name: InventoryInspectionPanel
   m_TagString: Untagged
@@ -709,6 +752,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 526583052}
+--- !u!114 &526583056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 526583052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80aee23c993d93e4a9cf05cc18ad45fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &528321555
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,7 +772,7 @@ GameObject:
   m_Component:
   - component: {fileID: 528321556}
   m_Layer: 0
-  m_Name: Hand(R)
+  m_Name: MainHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1147,7 +1201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &897464162
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1649,7 +1703,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.99853057}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: -150}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1919,7 +1973,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.12409113}
+  m_AnchoredPosition: {x: 0, y: 0.06503719}
   m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1285848574
@@ -2020,7 +2074,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1114723405}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99853057
+  m_Size: 0.99924505
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2687,7 +2741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1792590092
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2864,7 +2918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e398f0f10537e42a7a3daf21a53aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightHand: {fileID: 528321555}
+  projectileSpawn: {fileID: 0}
 --- !u!114 &1938974698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2876,7 +2930,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56d6955d9227c0c4a8469ef78d5cb073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerItems: []
+  itemDetailsPanel: {fileID: 0}
+  baggedItems: []
+  equippedItems: []
 --- !u!1 &1981437371
 GameObject:
   m_ObjectHideFlags: 0
@@ -3046,9 +3102,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -7, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2042667690
 MonoBehaviour:
