@@ -28,7 +28,14 @@ public class InventoryController : MonoBehaviour {
         {
             if (GetComponent<InventoryController>().baggedItems.Count > 0)
             {
-                GetComponent<InventoryController>().EquipItem((Equippable)GetComponent<InventoryController>().baggedItems[0]);
+                EquipItem((Equippable)baggedItems[0]);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            if (GetComponent<InventoryController>().baggedItems.Count > 0)
+            {
+                DropItem((Equippable)baggedItems[0]);
             }
         }
     }
@@ -36,8 +43,24 @@ public class InventoryController : MonoBehaviour {
     public void TakeItem(InventoryItem targetItem)
     {
         baggedItems.Add(targetItem);
+        targetItem.GetComponent<MeshRenderer>().enabled = false;
+        targetItem.GetComponent<Collider>().enabled = false;
         UIEventHandler.ItemAddedToInventory(targetItem);
         Debug.Log("Picked up " + targetItem + ". " + baggedItems.Count + " items in inventory.");
+    }
+
+    public void DropItem(InventoryItem itemToDrop)                    // Currently can only drop items from non-equipped inventory (must be in bag)
+    {
+        if (baggedItems.Remove(itemToDrop))
+        {
+            itemToDrop.GetComponentInParent<Transform>().position = gameObject.transform.position;
+            itemToDrop.transform.SetParent(null);
+            itemToDrop.GetComponent<MeshRenderer>().enabled = true;
+            itemToDrop.GetComponent<Collider>().enabled = true;
+            UIEventHandler.ItemRemovedFromInventory(itemToDrop);
+        }
+        
+        Debug.Log("Dropped " + itemToDrop + ". " + baggedItems.Count + " items in inventory.");
     }
 
     public void EquipItem(Equippable itemToEquip)
@@ -52,7 +75,9 @@ public class InventoryController : MonoBehaviour {
         }
         Debug.Log("Equipping new item...");
         itemToEquip.transform.SetParent(targetSlot.transform, false);
+        itemToEquip.GetComponent<MeshRenderer>().enabled = true;
         equippedItems.Add(itemToEquip);
+        UIEventHandler.ItemEquipped(itemToEquip);
         characterStats.AddStatBonuses(itemToEquip.Stats);
         if (itemToEquip.gameObject.GetComponent<IWeapon>() != null)
         {
@@ -70,7 +95,7 @@ public class InventoryController : MonoBehaviour {
     {
         characterStats.RemoveStatBonuses(itemToUnequip.Stats);
         baggedItems.Add(itemToUnequip);
-
+        UIEventHandler.ItemAddedToInventory(itemToUnequip);
         equippedItems.Remove(itemToUnequip);
         Debug.Log("Unequipped: " + itemToUnequip);
     }

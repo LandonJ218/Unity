@@ -13,6 +13,8 @@ public class InventoryUI : MonoBehaviour {
 	void Start () {
         itemContainer = Resources.Load<UIInventoryItem>("UI/ItemContainer");
         UIEventHandler.OnItemAddedToInventory += ItemAdded;
+        UIEventHandler.OnItemRemovedFromInventory += ItemRemoved;
+        UIEventHandler.OnItemEquipped += ItemEquipped;
         InventoryIsOpen = false;
         inventoryPanel.gameObject.SetActive(InventoryIsOpen);
 	}
@@ -32,5 +34,24 @@ public class InventoryUI : MonoBehaviour {
         UIInventoryItem emptyItem = Instantiate(itemContainer);
         emptyItem.SetItem(item);
         emptyItem.transform.SetParent(scrollViewContent, false);
+    }
+
+    public void ItemRemoved(InventoryItem item)
+    {
+        UIInventoryItem emptyItem = Instantiate(itemContainer);
+        emptyItem.SetItem(item);
+        emptyItem.transform.SetParent(scrollViewContent, false);
+    }
+
+    public void ItemEquipped(InventoryItem item)
+    {
+        UIInventoryItem emptyItem = Instantiate(itemContainer);
+        emptyItem.SetItem(item);
+        emptyItem.transform.SetParent(scrollViewContent, false);
+    }
+
+    void AddListeners()
+    {
+
     }
 }

@@ -11,7 +11,7 @@ public class Slime : NPC {
     {
         currentHealth = maxHealth;
 
-        // Reference to playerObject is currently provided in inspector for testing
+        // Reference to playerObject can be provided in inspector for testing
         if (player != null)
         {
             currentTarget = player;
