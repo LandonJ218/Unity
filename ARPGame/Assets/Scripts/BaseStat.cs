@@ -27,13 +27,13 @@ public class BaseStat
 
     public void RemoveStatBonus(StatBonus statBonus)
     {
-        BaseAdditives.Remove(BaseAdditives.Find(x=> x.BonusValue == statBonus.BonusValue));
+        BaseAdditives.Remove(BaseAdditives.Find(x => x.BonusValue == statBonus.BonusValue));
     }
 
     public int GetCalculatedStatValue()
     {
         FinalValue = BaseValue;
-        BaseAdditives.ForEach(x=> FinalValue += x.BonusValue);
+        BaseAdditives.ForEach(x => FinalValue += x.BonusValue);
         return FinalValue;
     }
 }

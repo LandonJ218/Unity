@@ -8,6 +8,7 @@ public class UIEventHandler : MonoBehaviour {
     public static event ItemEventHandler OnItemAddedToInventory;
     public static event ItemEventHandler OnItemRemovedFromInventory;
     public static event ItemEventHandler OnItemEquipped;
+    public static event ItemEventHandler OnItemUnequipped;
 
     public static void ItemAddedToInventory(InventoryItem item)
     {
@@ -24,4 +25,8 @@ public class UIEventHandler : MonoBehaviour {
         OnItemEquipped(item);
     }
 
+    public static void ItemUnequipped(InventoryItem item)
+    {
+        OnItemUnequipped(item);
+    }
 }

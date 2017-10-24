@@ -51,8 +51,9 @@ public class PlayerController : MonoBehaviour {
         {
             GameObject clickedObject = clickInfo.collider.gameObject;
 
-            if ((clickedObject.GetComponent<NPC>() != null) || (clickedObject.GetComponent<Equippable>() != null))   // objects that can be interacted with
+            if ((clickedObject.GetComponent<NPC>() != null) || (clickedObject.GetComponent<InventoryItem>() != null))   // objects that can be interacted with
             {
+                // ToDo:  need to check if an item clicked is a child to other object
                 currentTarget = clickedObject;
                 MoveToInteraction();   // Move to / in range of the object before interacting
             }
@@ -87,7 +88,8 @@ public class PlayerController : MonoBehaviour {
     {
         if(currentTarget.GetComponent<InventoryItem>() != null)
         {
-            GetComponent<InventoryController>().TakeItem(currentTarget.GetComponent<Equippable>());
+
+            transform.Find("Inventory").GetComponent<InventoryController>().TakeItem(currentTarget.GetComponent<Equippable>());
         }
         if(currentTarget.GetComponent<NPC>() != null)
         {

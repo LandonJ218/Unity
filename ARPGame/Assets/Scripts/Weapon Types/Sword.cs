@@ -31,11 +31,14 @@ public class Sword : Equippable, IWeapon {
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.tag == "Enemy")
+        if (col.transform.root != transform.root)   // Stop hitting yourself!
         {
-            col.GetComponent<IEnemy>().TakeDamage(Stats[0].GetCalculatedStatValue());
+            if (col.tag == "Enemy")
+            {
+                col.GetComponent<IEnemy>().TakeDamage(Stats[0].GetCalculatedStatValue());
+            }
+            Debug.Log("Hit: " + col.name);
         }
-        Debug.Log("Hit: " + col.name);
     }
 
 }

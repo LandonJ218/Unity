@@ -1,20 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour {
+
     public RectTransform inventoryPanel;
+    public RectTransform equippedPanel;
+    public RectTransform itemInspectionPanel;
     public RectTransform scrollViewContent;
-    UIInventoryItem itemContainer { get; set; }
+    public List<UIBaggedItem> UIBaggedItems { get; set; }
+    UIBaggedItem uiBaggedItem { get; set; }
+    public List<UIEquippedItem> UIEquippedItems { get; set; }
+    UIEquippedItem uiEquippedItem { get; set; }
+    UIInspectionDetails itemDetailsPanel { get; set; }
     bool InventoryIsOpen { get; set; }
 
 
-	// Use this for initialization
 	void Start () {
-        itemContainer = Resources.Load<UIInventoryItem>("UI/ItemContainer");
-        UIEventHandler.OnItemAddedToInventory += ItemAdded;
-        UIEventHandler.OnItemRemovedFromInventory += ItemRemoved;
+        UIBaggedItems = new List<UIBaggedItem>();
+        uiBaggedItem = Resources.Load<UIBaggedItem>("UI/UIBaggedItem");
+        UIEquippedItems = new List<UIEquippedItem>();
+        uiEquippedItem = Resources.Load<UIEquippedItem>("UI/UIEquippedItem");
+        UIEventHandler.OnItemAddedToInventory += ItemAddedToInventory;
+        UIEventHandler.OnItemRemovedFromInventory += ItemRemovedFromInventory;
         UIEventHandler.OnItemEquipped += ItemEquipped;
+        UIEventHandler.OnItemUnequipped += ItemUnequipped;
         InventoryIsOpen = false;
         inventoryPanel.gameObject.SetActive(InventoryIsOpen);
 	}
@@ -29,25 +40,43 @@ public class InventoryUI : MonoBehaviour {
         }
     }
 
-    public void ItemAdded(InventoryItem item)
+    public void ItemAddedToInventory(InventoryItem item)
     {
-        UIInventoryItem emptyItem = Instantiate(itemContainer);
-        emptyItem.SetItem(item);
-        emptyItem.transform.SetParent(scrollViewContent, false);
+        UIBaggedItem uiItem = Instantiate(uiBaggedItem);
+        uiItem.SetItem(item);
+        uiItem.transform.SetParent(scrollViewContent, false);
+        UIBaggedItems.Add(uiItem);
     }
 
-    public void ItemRemoved(InventoryItem item)
+    public void ItemRemovedFromInventory(InventoryItem item)
     {
-        UIInventoryItem emptyItem = Instantiate(itemContainer);
-        emptyItem.SetItem(item);
-        emptyItem.transform.SetParent(scrollViewContent, false);
+        UIBaggedItem uiItem = UIBaggedItems.Find(x => x.item == item);
+        UIBaggedItems.Remove(uiItem);
+        Destroy(uiItem.gameObject);
     }
 
     public void ItemEquipped(InventoryItem item)
     {
-        UIInventoryItem emptyItem = Instantiate(itemContainer);
-        emptyItem.SetItem(item);
-        emptyItem.transform.SetParent(scrollViewContent, false);
+        UIEquippedItem uiItem = Instantiate(uiEquippedItem);
+        uiItem.SetItem(item);
+        uiItem.transform.SetParent(equippedPanel.Find("Equipped" + ((Equippable)item).Slot), false);
+        UIEquippedItems.Add(uiItem);
+        //equippedPanel.Find("Equipped" + ((Equippable)item).Slot).gameObject.GetComponent<Image>().sprite = item.gameObject.GetComponent<Image>().sprite;
+    }
+
+    public void ItemUnequipped(InventoryItem item)
+    {
+        UIEquippedItem uiItem = UIEquippedItems.Find(x => x.item == item);
+        UIEquippedItems.Remove(uiItem);
+        Destroy(uiItem.gameObject);
+
+        Debug.Log("Changing UI panel: Unequipped" + ((Equippable)item).Slot);
+
+    }
+
+    public void SetItemDetails(InventoryItem item)
+    {
+        itemDetailsPanel.SetItem(item);
     }
 
     void AddListeners()

@@ -13,8 +13,8 @@ public class CameraController : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        mainCamera = GetComponent<Camera>();
         player = GameObject.Find("Player");
+        mainCamera = GetComponent<Camera>();
     }
 
     // Update is called once per frame
