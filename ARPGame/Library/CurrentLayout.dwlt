@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 492}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -176,8 +176,8 @@ MonoBehaviour:
     y: 0
     width: 1230
     height: 473
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -304,8 +304,8 @@ MonoBehaviour:
     y: 448
     width: 359
     height: 524
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 23}
   m_Panes:
   - {fileID: 22}
@@ -651,9 +651,9 @@ MonoBehaviour:
     height: 427
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0cfcffff
-    m_LastClickedID: -1012
-    m_ExpandedIDs: 1afcffff00000000ce310000503200008c320000
+    m_SelectedIDs: 98d2fdff
+    m_LastClickedID: -142696
+    m_ExpandedIDs: 1afcffff000000007431000096310000a8310000ce3100003832000050320000623200009a320000b6320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -714,18 +714,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/Inventory
+    - Assets/Resources/UI
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/Inventory
+  - Assets/Resources/UI
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Landon\Documents\GitHub\Unity\ARPGame
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 042c0000
-    m_LastClickedID: 11268
+    m_SelectedIDs: 062a0000
+    m_LastClickedID: 10758
     m_ExpandedIDs: 00000000962600009e2600006427000080270000982700004c28000056280000a2280000e4290000062a00004c2a00005e2b0000de2b00003e2c0000642d00009e2d0000c62d00001c2f0000302f0000c02f0000d02f00001030000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -779,8 +779,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 8a070000
-    m_LastClickedInstanceID: 1930
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 362f0000d62a0000d6270000
     m_RenameOverlay:
