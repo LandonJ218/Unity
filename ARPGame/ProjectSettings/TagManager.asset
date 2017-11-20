@@ -6,6 +6,15 @@ TagManager:
   tags:
   - Interactable
   - Enemy
+  - SlotHead
+  - SlotChest
+  - SlotShoulders
+  - SlotHands
+  - SlotMainHand
+  - SlotOffHand
+  - SlotWaist
+  - SlotLegs
+  - SlotFeet
   layers:
   - Default
   - TransparentFX

@@ -6,14 +6,16 @@ using UnityEngine.AI;
 public class PlayerController : MonoBehaviour {
 
     NavMeshAgent playerAgent;
+    InventoryController inventoryController;
+
     GameObject currentTarget = null;
     private bool hasInteracted = true;
-
 
     
 	// Use this for initialization
 	void Start () {
         playerAgent = GetComponent<NavMeshAgent>();
+        inventoryController = transform.Find("Inventory").GetComponent<InventoryController>();
     }
 	
 	// Update is called once per frame
@@ -88,8 +90,7 @@ public class PlayerController : MonoBehaviour {
     {
         if(currentTarget.GetComponent<InventoryItem>() != null)
         {
-
-            transform.Find("Inventory").GetComponent<InventoryController>().TakeItem(currentTarget.GetComponent<Equippable>());
+            inventoryController.TakeItem(currentTarget.GetComponent<InventoryItem>());
         }
         if(currentTarget.GetComponent<NPC>() != null)
         {
