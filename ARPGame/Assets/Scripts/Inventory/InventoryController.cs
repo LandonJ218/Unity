@@ -109,7 +109,7 @@ public class InventoryController : MonoBehaviour {
         TakeItem(itemToUnequip);              // unequipped items automatically go to the inventory for now
     }
 
-    public GameObject FindEquipmentSlot(GameObject currentObject, string targetSlot)      // NOT TESTED
+    public GameObject FindEquipmentSlot(GameObject currentObject, string targetSlot)      // NOT TESTED ENOUGH
     {
         GameObject targetObject = null;
         int childCount = currentObject.transform.childCount;
