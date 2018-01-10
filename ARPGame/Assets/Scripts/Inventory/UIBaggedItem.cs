@@ -16,7 +16,7 @@ public class UIBaggedItem : MonoBehaviour {
     void SetupUIItemValues()
     {
         transform.Find("ItemName").GetComponent<Text>().text = item.ItemName;
-        transform.Find("ItemIcon").GetComponent<Image>().sprite = item.GetComponent<Image>().sprite;
+        transform.Find("ItemIcon").GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Icons/" + item.name);
     }
 
     public void OnSelectItemButton()

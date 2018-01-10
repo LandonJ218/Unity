@@ -61,7 +61,6 @@ public class InventoryUI : MonoBehaviour {
         uiItem.SetItem(item);
         uiItem.transform.SetParent(equippedPanel.Find("Equipped" + ((Equippable)item).Slot), false);
         UIEquippedItems.Add(uiItem);
-        //equippedPanel.Find("Equipped" + ((Equippable)item).Slot).gameObject.GetComponent<Image>().sprite = item.gameObject.GetComponent<Image>().sprite;
     }
 
     public void ItemUnequipped(InventoryItem item)
