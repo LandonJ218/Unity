@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour {
         {
             GameObject clickedObject = clickInfo.collider.gameObject;
 
-            if ((clickedObject.GetComponent<NPC>() != null) || (clickedObject.GetComponent<InventoryItem>() != null))   // objects that can be interacted with
+            if ((clickedObject.GetComponent<NPC>() != null) || (clickedObject.GetComponent<InventoryItem>() != null) && (clickedObject.transform.root != gameObject.transform.root))   // objects that can be interacted with
             {
                 // ToDo:  need to check if an item clicked is a child to other object
                 currentTarget = clickedObject;
@@ -89,8 +89,8 @@ public class PlayerController : MonoBehaviour {
     public void Interact()
     {
         if(currentTarget.GetComponent<InventoryItem>() != null)
-        {
-            inventoryController.TakeItem(currentTarget.GetComponent<InventoryItem>());
+        {  
+            inventoryController.TakeItem(currentTarget.GetComponent<InventoryItem>());   
         }
         if(currentTarget.GetComponent<NPC>() != null)
         {
