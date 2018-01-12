@@ -29,7 +29,7 @@ public class PlayerWeaponController : MonoBehaviour {
     {
         if (equippedIWeapon != null)
         {
-            equippedIWeapon.PerformAttack();
+            //equippedIWeapon.PerformAttack();
         }
     }
 
@@ -37,7 +37,7 @@ public class PlayerWeaponController : MonoBehaviour {
     {
         if (equippedIWeapon != null)
         {
-            equippedIWeapon.PerformAttack2();
+            //equippedIWeapon.PerformAttack2();
         }
     }
 }

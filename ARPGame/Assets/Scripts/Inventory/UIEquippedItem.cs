@@ -15,7 +15,7 @@ public class UIEquippedItem : MonoBehaviour {
 
     void SetupUIItemValues()
     {
-        gameObject.GetComponent<Image>().sprite = item.GetComponent<Image>().sprite;
+        gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Icons/" + item.name);
         //transform.SetParent();
     }
 
