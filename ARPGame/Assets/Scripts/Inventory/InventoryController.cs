@@ -78,10 +78,9 @@ public class InventoryController : MonoBehaviour {
         {
             UIEventHandler.ItemRemovedFromInventory(itemToEquip);
         }
-        transform.parent.Find("PlayerModel").GetComponent<Animator>().enabled = false;               // TODO: not working   =(
+        transform.parent.Find("PlayerModel").GetComponent<Animator>().enabled = false;              
         itemToEquip.transform.SetParent(targetSlot.transform, false);
-        itemToEquip.transform.Rotate(90.0f, 0.0f, 0.0f, Space.Self);
-        itemToEquip.transform.Translate(0.0f, 0.8f, 0.0f);
+        itemToEquip.OrientForSlot();
         transform.parent.Find("PlayerModel").GetComponent<Animator>().enabled = true;
         itemToEquip.GetComponent<MeshRenderer>().enabled = true;
         equippedItems.Add(itemToEquip);
@@ -104,15 +103,11 @@ public class InventoryController : MonoBehaviour {
         UIEventHandler.ItemUnequipped(itemToUnequip);
         characterStats.RemoveStatBonuses(itemToUnequip.Stats);
         equippedItems.Remove(itemToUnequip);
-        if (((Equippable)itemToUnequip).Slot.EndsWith("Hand"))
+        if ((itemToUnequip).Slot.EndsWith("Hand"))
         {
             Debug.Log("Reorienting " + itemToUnequip.name + "... ");
             itemToUnequip.transform.Rotate(-90.0f, 0.0f, 0.0f, Space.Self);
 
-        }
-        else
-        {
-            //itemToPrep.gameObject.transform.localRotation.Set(0.0f, 0.0f, 0.0f, 0.0f);
         }
         Debug.Log("Unequipped: " + itemToUnequip);
         TakeItem(itemToUnequip);              // unequipped items automatically go to the inventory for now
@@ -121,13 +116,13 @@ public class InventoryController : MonoBehaviour {
     public void PrepItem(InventoryItem itemToPrep)                      // working on better solution for reorienting items as they are picked up / equipped.
     {
         itemToPrep.GetComponent<MeshRenderer>().enabled = false;
-        if (itemToPrep.gameObject.GetComponent<Equippable>() != null)
-        {
-            
-        }
+        
         itemToPrep.GetComponent<Collider>().enabled = false;
         itemToPrep.gameObject.transform.SetParent(gameObject.transform, false);
-        itemToPrep.gameObject.transform.localPosition = Vector3.zero;
+        if(itemToPrep.GetComponent<Equippable>() != null)
+        {
+            itemToPrep.GetComponent<Equippable>().OrientForBag();
+        }
     }
 
     public GameObject FindEquipmentSlot(GameObject currentObject, string targetSlot)      // NOT TESTED ENOUGH

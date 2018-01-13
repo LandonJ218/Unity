@@ -105,10 +105,10 @@ MonoBehaviour:
     y: 30
     width: 1904
     height: 972
-  m_MinSize: {x: 683, y: 442}
-  m_MaxSize: {x: 12008, y: 8042}
+  m_MinSize: {x: 713, y: 492}
+  m_MaxSize: {x: 18008, y: 14042}
   vertical: 1
-  controlID: 141
+  controlID: 11
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 1904
     height: 972
-  m_MinSize: {x: 683, y: 442}
-  m_MaxSize: {x: 12008, y: 8042}
+  m_MinSize: {x: 713, y: 492}
+  m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 142
+  controlID: 12
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 143
+  controlID: 13
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -256,10 +256,10 @@ MonoBehaviour:
     y: 0
     width: 490
     height: 972
-  m_MinSize: {x: 202, y: 342}
-  m_MaxSize: {x: 4002, y: 8042}
+  m_MinSize: {x: 232, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 39
+  controlID: 88
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -303,14 +303,14 @@ MonoBehaviour:
     y: 501
     width: 490
     height: 471
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 22}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
   - {fileID: 22}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -419,9 +419,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 1
   m_Position:
-    m_Target: {x: -41.59105, y: -11.940803, z: -20.62247}
+    m_Target: {x: 58.942837, y: -31.006416, z: -52.825573}
     speed: 2
-    m_Value: {x: -41.59105, y: -11.940803, z: -20.62247}
+    m_Value: {x: 58.942837, y: -31.006416, z: -52.825573}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -444,13 +444,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.0750458, y: 0.84561574, z: -0.12349287, w: -0.5138597}
+    m_Target: {x: -0.08103352, y: -0.88704175, z: 0.17063431, w: -0.4212772}
     speed: 2
-    m_Value: {x: -0.075045794, y: 0.8456156, z: -0.12349285, w: -0.5138596}
+    m_Value: {x: -0.08103352, y: -0.88704175, z: 0.17063431, w: -0.4212772}
   m_Size:
-    m_Target: 60.049877
+    m_Target: 92.261856
     speed: 2
-    m_Value: 60.049877
+    m_Value: 92.261856
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -497,7 +497,7 @@ MonoBehaviour:
     - {x: 599.6001, y: 60}
     - {x: 460.80002, y: 259.2}
     - {x: 1378.3999, y: 274.40002}
-    - {x: 823.80005, y: 378}
+    - {x: 653.6001, y: 343}
   m_PreviewAnimator: {fileID: 0}
   m_AnimatorController: {fileID: 0}
   m_BreadCrumbs: []
@@ -535,7 +535,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 8
     y: 640
-    width: 1228
+    width: 1133
     height: 410
   m_AnimEditor: {fileID: 0}
   m_Locked: 0
@@ -626,23 +626,23 @@ MonoBehaviour:
     height: 480
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a8340000
-    m_LastClickedID: 13480
-    m_ExpandedIDs: 1afcffff00000000d4320000e8320000f63200000c3300002e330000d23300003e340000983400009c340000a8340000bc340000ca340000
+    m_SelectedIDs: 86330000
+    m_LastClickedID: 13190
+    m_ExpandedIDs: 1afcffff00000000de3200000e330000223300002c33000030330000463300005a33000068330000ea3300000c34000016340000363400006a34000078340000be340000d2340000e2340000f634000004350000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Helmet
+      m_OriginalName: Helmet
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -17984
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 12}
     m_SearchString: 
@@ -689,19 +689,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/Inventory
+    - Assets/Resources/UI/Icons
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/Inventory
+  - Assets/Resources/UI/Icons
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Landon\Documents\GitHub\Unity\ARPGame
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 3}
-    m_SelectedIDs: 842c0000
-    m_LastClickedID: 11396
-    m_ExpandedIDs: 000000009a260000a226000098270000b4270000cc2700008a280000d8280000242a0000462a00009e2a00005e2c0000022d00004c2e00008e2e0000b62e00003030000044300000e03000003231000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 67}
+    m_SelectedIDs: 0a280000
+    m_LastClickedID: 10250
+    m_ExpandedIDs: 000000009a260000a22600001a270000c62700009c280000a6280000422a0000642a0000c42a00008c2c0000302d00007c2e0000be2e000060300000743000001031000062310000ac31000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -729,7 +729,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 18270000
     m_LastClickedID: 10008
-    m_ExpandedIDs: 000000009a260000a226000098270000b4270000cc2700008a280000d8280000242a0000462a00009e2a00005e2c0000022d00004c2e00008e2e0000b62e00003030000044300000e030000032310000
+    m_ExpandedIDs: 000000009a260000a22600001a270000c62700009c280000a6280000f4280000422a0000642a0000c42a00008c2c0000302d00007c2e0000be2e0000e62e000060300000743000001031000062310000ac310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -754,24 +754,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 3e340000
-    m_LastClickedInstanceID: 13374
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 362f0000d62a0000d6270000d82d00002e400000e2310000
+    m_ExpandedInstanceIDs: 362f0000d62a0000d6270000d82d00002e400000e23100007a270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Sword
+      m_OriginalName: Sword
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 11866
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 4
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 13}
     m_CreateAssetUtility:

@@ -20,7 +20,7 @@ public class Sword : Equippable {
         {
             if (col.tag == "Enemy")
             {
-                col.GetComponent<IEnemy>().TakeDamage(Stats[0].GetCalculatedStatValue());
+                col.GetComponent<IEnemy>().TakeDamage(Stats[0].GetCalculatedStatValue()); // just trying to use the STR stat on this item as weapon damage
             }
             Debug.Log("Hit: " + col.name);
         }
