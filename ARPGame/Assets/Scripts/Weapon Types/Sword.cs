@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : Equippable {
+public class Sword : Equippable, IWeapon {
 
     void Start()
     {
@@ -26,17 +26,17 @@ public class Sword : Equippable {
         }
     }
 
-    //public void PerformAttack()
-    //{
-    //    animator.SetTrigger("Base_Attack");
-    //    Debug.Log("Attacking with " + this.name + "!");
-    //}
+    public void PerformAttack()
+    {
+        PlayerAnimationEventHandler.HandleAnimation("PlayerAttack");
+        Debug.Log("Attacking with " + this.name + "!");
+    }
 
-    //public void PerformAttack2()    // sample of another attack and how it would need to reference it's own trigger (part of the animator object)
-    //{
-    //    animator.SetTrigger("Base_Attack2");
-    //    Debug.Log("Attacking with " + this.name + "!");
-    //}
+    public void PerformAttack2()    // sample of another attack and how it would need to reference it's own trigger (part of the animator object)
+    {
+        PlayerAnimationEventHandler.HandleAnimation("PlayerAttack");
+        Debug.Log("Attacking with " + this.name + "!");
+    }
 
 
 }

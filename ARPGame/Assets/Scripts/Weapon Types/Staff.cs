@@ -17,13 +17,13 @@ public class Staff : Equippable, IWeapon, IProjectileWeapon {
 
     public void PerformAttack()
     {
-        animator.SetTrigger("Base_Attack");
+        PlayerAnimationEventHandler.HandleAnimation("PlayerAttack");
         Debug.Log("Attacking with " + this.name + "!");
     }
 
     public void PerformAttack2()    // Sample of another attack and how it would need to reference it's own trigger (part of the animator object)
     {
-        animator.SetTrigger("Base_Attack2");
+        PlayerAnimationEventHandler.HandleAnimation("PlayerAttack");
         Debug.Log("Attacking with " + this.name + "!");
     }
 

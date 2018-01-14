@@ -26,12 +26,17 @@ public class PlayerWeaponController : MonoBehaviour {
 
     public void PerformWeaponAttack()
     {
-        PlayerAnimationEventHandler.PlayerAttack();
-         //equippedIWeapon.PerformAttack();
+        if(equippedIWeapon != null)
+        {
+            equippedIWeapon.PerformAttack();
+        }
     }
 
     public void PerformWeaponAttack2()
     {
-        PlayerAnimationEventHandler.PlayerAttack();
+        if(equippedIWeapon != null)
+        {
+            equippedIWeapon.PerformAttack2();
+        }
     }
 }

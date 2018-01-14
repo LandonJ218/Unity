@@ -1,0 +1,36 @@
+{
+    "AnimationTransistions" :[{
+        "AnimationName": "PlayerAttack",
+            "AnimationTransistions" : [
+                {
+                    "ArgumentName" : "Attack",
+                    "ArgumentType" : "Trigger",
+                    "ArgumentValue" : ""
+                },
+                {
+                    "ArgumentName" : "IsRunning",
+                    "ArgumentType" : "Bool",
+                    "ArgumentValue" : "false"
+                }
+            ]}
+        ,
+
+        {
+            "AnimationName": "PlayerRunning",
+            "AnimationTransistions" : [{
+                "ArgumentName" : "IsRunning",
+                "ArgumentType" : "Bool",
+                "ArgumentValue" : "True"
+            }]
+        },
+
+        {
+            "AnimationName": "PlayerIdle",
+            "AnimationTransistions" : [{
+                "ArgumentName" : "IsRunning",
+                "ArgumentType" : "Bool",
+                "ArgumentValue" : "False"
+            }]   
+        }
+    ]
+}

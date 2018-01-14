@@ -4,23 +4,10 @@ using UnityEngine;
 
 public class PlayerAnimationEventHandler : MonoBehaviour {
 
-	public delegate void PlayerAnimationHandler();
-    public static event PlayerAnimationHandler OnPlayerAttack;
-    public static event PlayerAnimationHandler OnPlayerRunning;
-    public static event PlayerAnimationHandler OnPlayerIdle;
-
-    public static void PlayerAttack()
+	public delegate void PlayerAnimationHandler(string animationName);
+    public static event PlayerAnimationHandler OnHandleAnimation;
+    public static void HandleAnimation(string animationName)
     {
-        OnPlayerAttack();
-    }
-
-    public static void PlayerRunning( )
-    {
-        OnPlayerRunning();
-    }
-
-    public static void PlayerIdle( )
-    {
-        OnPlayerIdle();
+        OnHandleAnimation(animationName);
     }
 }

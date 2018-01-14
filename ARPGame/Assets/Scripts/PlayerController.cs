@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour {
                 }
                 if(!playerAgent.hasPath || playerAgent.velocity.sqrMagnitude == 0f)
                 {
-                    PlayerAnimationEventHandler.PlayerIdle();
+                    PlayerAnimationEventHandler.HandleAnimation("PlayerIdle");
                 }
             }
         }
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
         {
             Debug.Log("Mouse click detected.");
-            PlayerAnimationEventHandler.PlayerRunning();
+            PlayerAnimationEventHandler.HandleAnimation("PlayerRunning");
             GetInteractionClick();
         }
         if (Input.GetAxis("Fire1") > 0f)
