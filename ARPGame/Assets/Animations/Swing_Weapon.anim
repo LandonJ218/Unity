@@ -30,15 +30,15 @@ AnimationClip:
         tangentMode: 0
       - serializedVersion: 2
         time: 0.25
-        value: {x: -78.4, y: 107.4, z: -85.3}
+        value: {x: -78.4, y: 108.11371, z: -85.3}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
       - serializedVersion: 2
         time: 0.5
         value: {x: -33.62, y: 71, z: -66.29}
-        inSlope: {x: 104.53333, y: -143.2, z: 101.38668}
-        outSlope: {x: 104.53333, y: -143.2, z: 101.38668}
+        inSlope: {x: 104.53333, y: -144.15161, z: 101.38668}
+        outSlope: {x: 104.53333, y: -144.15161, z: 101.38668}
         tangentMode: 0
       - serializedVersion: 2
         time: 1
@@ -103,14 +103,14 @@ AnimationClip:
       attribute: 4
       script: {fileID: 0}
       typeID: 4
-      customType: 14
+      customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 3607208074
       attribute: 4
       script: {fileID: 0}
       typeID: 4
-      customType: 14
+      customType: 4
       isPPtrCurve: 0
     pptrCurveMapping: []
   m_AnimationClipSettings:
@@ -191,15 +191,15 @@ AnimationClip:
         tangentMode: 136
       - serializedVersion: 2
         time: 0.25
-        value: 107.4
+        value: 108.11371
         inSlope: 0
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
         time: 0.5
         value: 71
-        inSlope: -143.2
-        outSlope: -143.2
+        inSlope: -144.15161
+        outSlope: -144.15161
         tangentMode: 136
       - serializedVersion: 2
         time: 1
