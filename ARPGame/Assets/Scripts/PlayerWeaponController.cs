@@ -10,7 +10,6 @@ public class PlayerWeaponController : MonoBehaviour {
     void Start()
     {
         projectileSpawn = transform.Find("ProjectileSpawn");
-
     }
 
     void Update()
@@ -27,17 +26,13 @@ public class PlayerWeaponController : MonoBehaviour {
 
     public void PerformWeaponAttack()
     {
-        if (equippedIWeapon != null)
-        {
-            //equippedIWeapon.PerformAttack();
-        }
+        Debug.Log("WOOP");
+        PlayerAnimationEventHandler.PlayerAttack();
+         //equippedIWeapon.PerformAttack();
     }
 
     public void PerformWeaponAttack2()
     {
-        if (equippedIWeapon != null)
-        {
-            //equippedIWeapon.PerformAttack2();
-        }
+        PlayerAnimationEventHandler.PlayerAttack();
     }
 }
