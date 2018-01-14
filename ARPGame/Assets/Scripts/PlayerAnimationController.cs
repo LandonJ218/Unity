@@ -28,4 +28,24 @@ public class PlayerAnimationController : BaseAnimationController {
 		var  animatorTransistions = playerAnimations.Find(a => a.AnimationName.Equals(animationName));
 		HandleAnimatorTransistions(animatorTransistions.AnimationTransistionArgs);
 	}
+
+	public void EnableWeapon()
+    {
+		Transform[] children = GetComponentsInChildren<Transform>();
+		foreach(Transform child in children) {
+			if(child.CompareTag("Weapon")) {
+				child.GetComponent<BoxCollider>().enabled = true;
+			}
+		}
+    }
+
+    public void DisableWeapon()
+    {
+        Transform[] children = GetComponentsInChildren<Transform>();
+		foreach(Transform child in children) {
+			if(child.CompareTag("Weapon")) {
+				child.GetComponent<BoxCollider>().enabled = false;
+			}
+		}
+    }
 }

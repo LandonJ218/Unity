@@ -11,7 +11,6 @@ public class Sword : Equippable, IWeapon {
         Stats.Add(baseStat);
         ItemName = name;
         Slot = "MainHand"; 
-        
     }
 
     void OnTriggerEnter(Collider col)
@@ -37,6 +36,5 @@ public class Sword : Equippable, IWeapon {
         PlayerAnimationEventHandler.HandleAnimation("PlayerAttack");
         Debug.Log("Attacking with " + this.name + "!");
     }
-
 
 }

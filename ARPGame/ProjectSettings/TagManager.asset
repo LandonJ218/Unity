@@ -15,6 +15,7 @@ TagManager:
   - SlotWaist
   - SlotLegs
   - SlotFeet
+  - Weapon
   layers:
   - Default
   - TransparentFX

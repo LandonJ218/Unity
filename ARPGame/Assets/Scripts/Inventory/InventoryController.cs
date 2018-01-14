@@ -15,7 +15,6 @@ public class InventoryController : MonoBehaviour {
     {
         characterStats = transform.parent.gameObject.GetComponent<CharacterStats>();
         playerWeaponController = transform.parent.gameObject.GetComponent<PlayerWeaponController>();
-
     }
 
     public void Update()

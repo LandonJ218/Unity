@@ -2022,6 +2022,15 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 65119607013362328, guid: 1487c23fb65ec8b44bfb1aeb50f7b41b,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590024351328786, guid: 1487c23fb65ec8b44bfb1aeb50f7b41b, type: 2}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 54271088095470540, guid: 1487c23fb65ec8b44bfb1aeb50f7b41b, type: 2}
     - {fileID: 95766132317345296, guid: 1487c23fb65ec8b44bfb1aeb50f7b41b, type: 2}
@@ -2834,7 +2843,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.22114068}
+  m_AnchoredPosition: {x: 0, y: 0.000021557044}
   m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1285848574
@@ -3049,7 +3058,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1114723405}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99695075
+  m_Size: 0.99978614
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4534,6 +4543,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1938974692}
+    - target: {fileID: 1655578694584110, guid: f14e5c4f93dab884ab2604a6971508a9, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f14e5c4f93dab884ab2604a6971508a9, type: 2}
   m_IsPrefabParent: 0
