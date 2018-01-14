@@ -26,6 +26,6 @@ public class PlayerAnimationController : BaseAnimationController {
 	public void HandleAnimation(string animationName)
 	{
 		var  animatorTransistions = playerAnimations.Find(a => a.AnimationName.Equals(animationName));
-		HandleAnimatorTransistions(animatorTransistions.AnimationTransistionsArgs);
+		HandleAnimatorTransistions(animatorTransistions.AnimationTransistionArgs);
 	}
 }

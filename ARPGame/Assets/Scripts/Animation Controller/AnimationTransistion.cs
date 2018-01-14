@@ -6,9 +6,9 @@ using UnityEngine;
 [Serializable]
 public class AnimationTransistion{
 	public string AnimationName;
-	public List<AnimationTransistionArg> AnimationTransistionsArgs;
+	public List<AnimationTransistionArg> AnimationTransistionArgs;
 	public AnimationTransistion()
 	{
-		AnimationTransistionsArgs = new List<AnimationTransistionArg>();
+		AnimationTransistionArgs = new List<AnimationTransistionArg>();
 	}
 }
