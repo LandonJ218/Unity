@@ -23,9 +23,16 @@ public class PlayerController : MonoBehaviour {
         if (playerAgent != null && !(playerAgent.pathPending))
         {
             // Key to this check is that stoppingDistance is set to 0 when current destination in not interactable; hence those "clicks" won't call Interact()
-            if (!hasInteracted && playerAgent.remainingDistance <= playerAgent.stoppingDistance)
+            if (Vector3.Distance(playerAgent.destination, playerAgent.transform.position) <= playerAgent.stoppingDistance)
             {
-                Interact();
+                if(!hasInteracted)
+                {
+                    Interact();
+                }
+                if(!playerAgent.hasPath || playerAgent.velocity.sqrMagnitude == 0f)
+                {
+                    PlayerAnimationEventHandler.PlayerIdle();
+                }
             }
         }
         GetInput();

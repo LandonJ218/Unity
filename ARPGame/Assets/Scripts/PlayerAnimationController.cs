@@ -11,23 +11,15 @@ public class PlayerAnimationController : MonoBehaviour {
 		PlayerAnimationEventHandler.OnPlayerRunning += PlayerRunning;
 		PlayerAnimationEventHandler.OnPlayerIdle += PlayerIdle;
 	}
-
-	void Update()
-	{
-		
-	}
-
 	public void PlayerAttack()
 	{
 		anim.SetTrigger("Attack");
 		anim.SetBool("IsRunning", false);
 	}
-	
 	public void PlayerRunning()
 	{
 		anim.SetBool("IsRunning", true);
 	}
-
 	public void PlayerIdle()
 	{
 		anim.SetBool("IsRunning", false);

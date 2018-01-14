@@ -26,7 +26,6 @@ public class PlayerWeaponController : MonoBehaviour {
 
     public void PerformWeaponAttack()
     {
-        Debug.Log("WOOP");
         PlayerAnimationEventHandler.PlayerAttack();
          //equippedIWeapon.PerformAttack();
     }
