@@ -2,17 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : Equippable {
+public class SwordModel : EquippableModel {
 
-    void Start()
-    {
-        // For testing, these will be set in the procedural/random generation of equipment
-        BaseStat baseStat = new BaseStat("STR", 5);
-        Stats.Add(baseStat);
-        ItemName = name;
-        Slot = "MainHand"; 
-        
-    }
 
     void OnTriggerEnter(Collider col)
     {
@@ -20,23 +11,11 @@ public class Sword : Equippable {
         {
             if (col.tag == "Enemy")
             {
-                col.GetComponent<IEnemy>().TakeDamage(Stats[0].GetCalculatedStatValue()); // just trying to use the STR stat on this item as weapon damage
+                // just trying to use the STR stat on this item as weapon damage;  Work needs to be done on the stat system to store current values instead of recalculating them
+                col.GetComponent<IEnemy>().TakeDamage(transform.root.GetComponent<CharacterStats>().stats.Find(x => x.StatName == "STR").GetCalculatedStatValue());
             }
             Debug.Log("Hit: " + col.name);
         }
     }
-
-    //public void PerformAttack()
-    //{
-    //    animator.SetTrigger("Base_Attack");
-    //    Debug.Log("Attacking with " + this.name + "!");
-    //}
-
-    //public void PerformAttack2()    // sample of another attack and how it would need to reference it's own trigger (part of the animator object)
-    //{
-    //    animator.SetTrigger("Base_Attack2");
-    //    Debug.Log("Attacking with " + this.name + "!");
-    //}
-
 
 }

@@ -8,6 +8,5 @@ public class InventoryItem : MonoBehaviour
     public string ItemName { get; set; }
     public string Description { get; set; }
     public string ActionName { get; set; }
-    public bool IsStatModifier { get; set; }
 
 }

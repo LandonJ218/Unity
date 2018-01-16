@@ -8,13 +8,17 @@ TagManager:
   - Enemy
   - SlotHead
   - SlotChest
-  - SlotShoulders
   - SlotHands
   - SlotMainHand
   - SlotOffHand
   - SlotWaist
   - SlotLegs
-  - SlotFeet
+  - SlotForearmRight
+  - SlotForearmLeft
+  - SlotShoulderRight
+  - SlotShoulderLeft
+  - SlotFootRight
+  - SlotFootLeft
   layers:
   - Default
   - TransparentFX
