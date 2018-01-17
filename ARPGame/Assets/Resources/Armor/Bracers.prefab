@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4754505856742464}
   - component: {fileID: 33896321597952036}
   - component: {fileID: 23622360297640780}
-  - component: {fileID: 114343140013622888}
+  - component: {fileID: 114258363048417396}
   m_Layer: 0
-  m_Name: BracerLeft
+  m_Name: BracerLeftModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,6 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4757236504659580}
   - component: {fileID: 65896814810352200}
+  - component: {fileID: 114491178626069464}
   m_Layer: 0
   m_Name: Bracers
   m_TagString: Untagged
@@ -55,9 +56,9 @@ GameObject:
   - component: {fileID: 4001105681083118}
   - component: {fileID: 33430536275063982}
   - component: {fileID: 23921575784435240}
-  - component: {fileID: 114626814815484606}
+  - component: {fileID: 114656583813903460}
   m_Layer: 0
-  m_Name: BracerRight
+  m_Name: BracerRightModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,6 +114,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -128,6 +130,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -145,6 +148,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -160,6 +164,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -194,7 +199,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.7, z: 0.4}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114343140013622888
+--- !u!114 &114258363048417396
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -202,13 +207,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1035919949505346}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7f24f8d7c4c1744a0fa254733e67e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Side: Left
+  rotationForSlot: {x: -90, y: 90, z: 0}
+  offsetForSlot: {x: 0, y: 0, z: 0}
+--- !u!114 &114491178626069464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1209593694503612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e48aeeff50c32e4a8da14331b5effb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationForSlot: {x: -90, y: 0, z: 90}
-  offsetForSlot: {x: 0, y: 0, z: 0}
-  Slot: ForearmLeft
---- !u!114 &114626814815484606
+  Models: []
+  Slot: Forearm
+--- !u!114 &114656583813903460
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -216,9 +234,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1327888291826574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e48aeeff50c32e4a8da14331b5effb6, type: 3}
+  m_Script: {fileID: 11500000, guid: dc7f24f8d7c4c1744a0fa254733e67e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationForSlot: {x: -90, y: 0, z: -90}
+  Side: Right
+  rotationForSlot: {x: -90, y: -90, z: 0}
   offsetForSlot: {x: 0, y: 0, z: 0}
-  Slot: ForearmRight
