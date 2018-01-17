@@ -19,13 +19,13 @@ public class InventoryController : MonoBehaviour {
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            if (GetComponent<InventoryController>().baggedItems.Count > 0)
-            {
-                EquipItem((Equippable)baggedItems[0]);
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.T))                             // was used for equpping prior to inventory ui having clickable items
+        //{
+        //    if (GetComponent<InventoryController>().baggedItems.Count > 0)
+        //    {
+        //        EquipItem((Equippable)baggedItems[0]);
+        //    }
+        //}
         if (Input.GetKeyDown(KeyCode.G))
         {
             if (GetComponent<InventoryController>().baggedItems.Count > 0)
@@ -37,7 +37,7 @@ public class InventoryController : MonoBehaviour {
 
     public void TakeItem(InventoryItem targetItem)
     {
-        PrepItem(targetItem);
+        PrepItemForBag(targetItem);
         baggedItems.Add(targetItem);
         UIEventHandler.ItemAddedToInventory(targetItem);
         Debug.Log(targetItem + " is now in inventory. " + baggedItems.Count + " items in inventory.");
@@ -45,7 +45,7 @@ public class InventoryController : MonoBehaviour {
 
     public void DropItem(InventoryItem itemToDrop)                    // Currently can only drop items from non-equipped inventory (must be in bag)
     {
-        if (baggedItems.Remove(itemToDrop))
+        if (baggedItems.Remove(itemToDrop))                           // needs to be updated to handle new equippable item structure (equippable / equippableModel)
         {
             UIEventHandler.ItemRemovedFromInventory(itemToDrop);
             itemToDrop.transform.SetParent(null, true);
@@ -58,31 +58,28 @@ public class InventoryController : MonoBehaviour {
 
     public void EquipItem(Equippable itemToEquip)
     {
-        GameObject targetSlot;
         Debug.Log("Checking " + itemToEquip.Slot + " for existing equipment...");
-        
-        if (equippedItems.Exists(x => x.Slot == itemToEquip.Slot))      
+
+        if (equippedItems.Exists(x => x.Slot == itemToEquip.Slot))
         {
             Equippable previouslyEquipped = equippedItems.Find(x => x.Slot == itemToEquip.Slot);
-            targetSlot = previouslyEquipped.transform.parent.gameObject;
-            Debug.Log("Removing " + previouslyEquipped.name + " from " + targetSlot.name + "... ");
             UnEquipItem(previouslyEquipped);
         }
-        else
-        {
-            targetSlot = FindEquipmentSlot(transform.root.Find("PlayerModel").gameObject, itemToEquip.Slot); // May change the initial object to send in later
-        }
+
         Debug.Log("Equipping " + itemToEquip.name + "... ");
-        if(baggedItems.Remove(itemToEquip)) //is the item coming from the player's own inventory?
+        if (baggedItems.Remove(itemToEquip))            //is the item coming from the player's own inventory?
         {
             UIEventHandler.ItemRemovedFromInventory(itemToEquip);
         }
-        transform.parent.Find("PlayerModel").GetComponent<Animator>().enabled = false;               // TODO: not working   =(
-        itemToEquip.transform.SetParent(targetSlot.transform, false);
-        itemToEquip.transform.Rotate(90.0f, 0.0f, 0.0f, Space.Self);
-        itemToEquip.transform.Translate(0.0f, 0.8f, 0.0f);
-        transform.parent.Find("PlayerModel").GetComponent<Animator>().enabled = true;
-        itemToEquip.GetComponent<MeshRenderer>().enabled = true;
+
+        foreach (EquippableModel x in itemToEquip.Models)
+        {
+            GameObject modelAnchor = FindEquipmentSlot(transform.root.Find("PlayerModel").gameObject, (itemToEquip.Slot + x.Side));
+            x.transform.SetParent(modelAnchor.transform, false);
+            x.OrientForSlot();
+            x.GetComponent<MeshRenderer>().enabled = true;
+        }
+
         equippedItems.Add(itemToEquip);
         UIEventHandler.ItemEquipped(itemToEquip);
         characterStats.AddStatBonuses(itemToEquip.Stats);
@@ -103,30 +100,30 @@ public class InventoryController : MonoBehaviour {
         UIEventHandler.ItemUnequipped(itemToUnequip);
         characterStats.RemoveStatBonuses(itemToUnequip.Stats);
         equippedItems.Remove(itemToUnequip);
-        if (((Equippable)itemToUnequip).Slot.EndsWith("Hand"))
-        {
-            Debug.Log("Reorienting " + itemToUnequip.name + "... ");
-            itemToUnequip.transform.Rotate(-90.0f, 0.0f, 0.0f, Space.Self);
-
-        }
-        else
-        {
-            //itemToPrep.gameObject.transform.localRotation.Set(0.0f, 0.0f, 0.0f, 0.0f);
-        }
         Debug.Log("Unequipped: " + itemToUnequip);
         TakeItem(itemToUnequip);              // unequipped items automatically go to the inventory for now
     }
 
-    public void PrepItem(InventoryItem itemToPrep)                      // working on better solution for reorienting items as they are picked up / equipped.
+    public void PrepItemForBag(InventoryItem itemToPrep)                    
     {
-        itemToPrep.GetComponent<MeshRenderer>().enabled = false;
-        if (itemToPrep.gameObject.GetComponent<Equippable>() != null)
-        {
-            
-        }
-        itemToPrep.GetComponent<Collider>().enabled = false;
         itemToPrep.gameObject.transform.SetParent(gameObject.transform, false);
         itemToPrep.gameObject.transform.localPosition = Vector3.zero;
+        if (itemToPrep.GetComponent<Equippable>() != null)
+        {
+            Debug.Log(itemToPrep.name + " is equippable...");
+            foreach(EquippableModel x in itemToPrep.GetComponent<Equippable>().Models)
+            {
+                x.transform.SetParent(itemToPrep.transform, false);
+                x.OrientForBag();
+                x.GetComponent<MeshRenderer>().enabled = false;
+                Debug.Log(x.name + " should now be invisible...");
+            }
+        }
+        else
+        {
+            itemToPrep.GetComponent<MeshRenderer>().enabled = false;
+            itemToPrep.GetComponent<Collider>().enabled = false;
+        }
     }
 
     public GameObject FindEquipmentSlot(GameObject currentObject, string targetSlot)      // NOT TESTED ENOUGH

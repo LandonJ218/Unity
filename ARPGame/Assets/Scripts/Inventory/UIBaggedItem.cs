@@ -22,6 +22,9 @@ public class UIBaggedItem : MonoBehaviour {
     public void OnSelectItemButton()
     {
         // Right now clicking an item in inventory will equip it. I will probably change this to work exclusively with right click
-        item.transform.parent.GetComponent<InventoryController>().EquipItem((Equippable)item);
+        if(item.GetComponent<Equippable>() != null)
+        {
+            item.transform.parent.GetComponent<InventoryController>().EquipItem((Equippable)item);
+        }
     }
 }
