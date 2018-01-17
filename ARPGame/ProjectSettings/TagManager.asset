@@ -19,6 +19,7 @@ TagManager:
   - SlotShoulderLeft
   - SlotFootRight
   - SlotFootLeft
+  - Weapon
   layers:
   - Default
   - TransparentFX
