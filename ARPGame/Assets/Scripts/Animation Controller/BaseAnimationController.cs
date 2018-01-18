@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseAnimationController : MonoBehaviour {
-	public Animator anim;
+	protected Animator anim;
 
 	public void HandleAnimatorTransistions(ICollection<AnimationTransistionArg> args)
 	{

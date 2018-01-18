@@ -34,7 +34,7 @@ public class PlayerAnimationController : BaseAnimationController {
 		Transform[] children = GetComponentsInChildren<Transform>();
 		foreach(Transform child in children) {
 			if(child.CompareTag("Weapon")) {
-				child.GetComponent<BoxCollider>().enabled = true;
+				child.GetComponent<MeshCollider>().enabled = true;
 			}
 		}
     }
@@ -44,7 +44,7 @@ public class PlayerAnimationController : BaseAnimationController {
         Transform[] children = GetComponentsInChildren<Transform>();
 		foreach(Transform child in children) {
 			if(child.CompareTag("Weapon")) {
-				child.GetComponent<BoxCollider>().enabled = false;
+				child.GetComponent<MeshCollider>().enabled = false;
 			}
 		}
     }
