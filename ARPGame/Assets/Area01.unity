@@ -1274,6 +1274,11 @@ Prefab:
       propertyPath: m_Name
       value: Helmet
       objectReference: {fileID: 0}
+    - target: {fileID: 23751911340508756, guid: 715051adf4139474e8c77cd5b7da5361,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f00f50e663f1c3946afa674d5944697c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 715051adf4139474e8c77cd5b7da5361, type: 2}
   m_IsPrefabParent: 0
@@ -3051,7 +3056,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000018224666}
+  m_AnchoredPosition: {x: 0, y: 0.000033819113}
   m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1285848574
