@@ -333,6 +333,10 @@ Prefab:
       propertyPath: m_Name
       value: Sword
       objectReference: {fileID: 0}
+    - target: {fileID: 1640421681168018, guid: 8b84864c1028b954e8b3443272859292, type: 2}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b84864c1028b954e8b3443272859292, type: 2}
   m_IsPrefabParent: 0
@@ -2146,6 +2150,25 @@ Transform:
   m_Father: {fileID: 2103190516}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1022864572 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1210916553213468, guid: 8b84864c1028b954e8b3443272859292,
+    type: 2}
+  m_PrefabInternal: {fileID: 118288986}
+--- !u!114 &1022864576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1022864572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca34a1fd49444b4e92ac7541e5e8dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Side: 
+  rotationForSlot: {x: 0, y: 0, z: 0}
+  offsetForSlot: {x: 0, y: 0, z: 0}
 --- !u!1 &1036605152
 GameObject:
   m_ObjectHideFlags: 0
@@ -2999,7 +3022,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0000068752593}
+  m_AnchoredPosition: {x: 0, y: 0.000020868547}
   m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1285848574
@@ -3949,8 +3972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ed91fbef151b84a8cda4a08c44f831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  playerAnimationFile: {fileID: 4900000, guid: 5db21dd38b7c9944fb002c6d223ad177, type: 3}
+  animationFile: {fileID: 4900000, guid: 5db21dd38b7c9944fb002c6d223ad177, type: 3}
 --- !u!1 &1684989937
 GameObject:
   m_ObjectHideFlags: 0

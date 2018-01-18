@@ -3,7 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseAnimationController : MonoBehaviour {
+	public TextAsset animationFile;
 	protected Animator anim;
+	protected List<AnimationTransistion> animationTransistions = new List<AnimationTransistion>();
+
+	protected void LoadAnimationTransitions()
+	{
+		if(animationFile != null)
+		{
+ 			animationTransistions = JsonUtility.FromJson<AnimationTransistionWrapper>(animationFile.text).AnimationTransistions;
+		}
+	}
 
 	public void HandleAnimatorTransistions(ICollection<AnimationTransistionArg> args)
 	{
@@ -28,5 +38,16 @@ public class BaseAnimationController : MonoBehaviour {
 					break;
 			}
 		}
+	}
+
+	public void HandleAnimation(string animationName)
+	{
+		var  animatorTransistions = animationTransistions.Find(a => a.AnimationName.Equals(animationName));
+		HandleAnimatorTransistions(animatorTransistions.AnimationTransistionArgs);
+	}
+
+	public void HandleAnimation(ICollection<AnimationTransistionArg> animationArgs)
+	{
+		HandleAnimatorTransistions(animationArgs);
 	}
 }

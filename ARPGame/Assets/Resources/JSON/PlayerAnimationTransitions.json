@@ -6,11 +6,6 @@
                     "ArgumentName" : "Attack",
                     "ArgumentType" : "Trigger",
                     "ArgumentValue" : ""
-                },
-                {
-                    "ArgumentName" : "IsRunning",
-                    "ArgumentType" : "Bool",
-                    "ArgumentValue" : "false"
                 }
             ]}
         ,
