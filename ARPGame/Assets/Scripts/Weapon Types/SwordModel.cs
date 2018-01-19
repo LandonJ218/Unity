@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordModel : EquippableModel, IWeapon {
-
+public class SwordModel : EquippableModel, IWeapon
+{
 
     void OnTriggerEnter(Collider col)
     {
