@@ -34,6 +34,10 @@ public class PlayerController : MonoBehaviour {
                     PlayerAnimationEventHandler.HandleAnimation("PlayerIdle");
                 }
             }
+            else
+            {
+                PlayerAnimationEventHandler.HandleAnimation("PlayerRunning");
+            }
         }
         GetInput();
     }
@@ -43,7 +47,6 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
         {
             Debug.Log("Mouse click detected.");
-            PlayerAnimationEventHandler.HandleAnimation("PlayerRunning");
             GetInteractionClick();
         }
         if (Input.GetAxis("Fire1") > 0f)
