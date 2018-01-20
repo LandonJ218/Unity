@@ -1,0 +1,320 @@
+fileFormatVersion: 2
+guid: ff60ccbf0359a2a4eadcc21dc256cbe9
+timeCreated: 1516414625
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Bone
+    100004: Bone_001
+    100006: Bone_002
+    100008: Bone_003
+    100010: Bone_004_L_001
+    100012: Bone_004_L_002
+    100014: Bone_004_L_003
+    100016: Bone_004_L_004
+    100018: Bone_004_R_001
+    100020: Bone_004_R_002
+    100022: Bone_004_R_003
+    100024: Bone_004_R_004
+    100026: Bone_005_L
+    100028: Bone_005_L_001
+    100030: Bone_005_L_002
+    100032: Bone_005_L_003
+    100034: Bone_005_L_004
+    100036: Bone_005_L_005
+    100038: Bone_005_R
+    100040: Bone_005_R_001
+    100042: Bone_005_R_002
+    100044: Bone_005_R_003
+    100046: Bone_005_R_004
+    100048: Bone_005_R_005
+    100050: Bone_L
+    100052: Bone_L_001
+    100054: Bone_L_002
+    100056: Bone_L_003
+    100058: Bone_L_004
+    100060: Bone_L_005
+    100062: Bone_L_006
+    100064: Bone_R
+    100066: Bone_R_001
+    100068: Bone_R_002
+    100070: Bone_R_003
+    100072: Bone_R_004
+    100074: Bone_R_005
+    100076: Bone_R_006
+    100078: //RootNode
+    100080: Sphere
+    400000: Armature
+    400002: Bone
+    400004: Bone_001
+    400006: Bone_002
+    400008: Bone_003
+    400010: Bone_004_L_001
+    400012: Bone_004_L_002
+    400014: Bone_004_L_003
+    400016: Bone_004_L_004
+    400018: Bone_004_R_001
+    400020: Bone_004_R_002
+    400022: Bone_004_R_003
+    400024: Bone_004_R_004
+    400026: Bone_005_L
+    400028: Bone_005_L_001
+    400030: Bone_005_L_002
+    400032: Bone_005_L_003
+    400034: Bone_005_L_004
+    400036: Bone_005_L_005
+    400038: Bone_005_R
+    400040: Bone_005_R_001
+    400042: Bone_005_R_002
+    400044: Bone_005_R_003
+    400046: Bone_005_R_004
+    400048: Bone_005_R_005
+    400050: Bone_L
+    400052: Bone_L_001
+    400054: Bone_L_002
+    400056: Bone_L_003
+    400058: Bone_L_004
+    400060: Bone_L_005
+    400062: Bone_L_006
+    400064: Bone_R
+    400066: Bone_R_001
+    400068: Bone_R_002
+    400070: Bone_R_003
+    400072: Bone_R_004
+    400074: Bone_R_005
+    400076: Bone_R_006
+    400078: //RootNode
+    400080: Sphere
+    2100000: unnamed
+    4300000: Sphere
+    7400000: Default Take
+    7400002: PoseLib
+    7400004: SlimeAttack
+    7400006: SlimeBeingHit
+    7400008: SlimeMoveForward
+    7400010: SlimeRestJiggle
+    7400012: SlimeRestJiggle2
+    9500000: //RootNode
+    13700000: Sphere
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: SlimeAttack
+      takeName: SlimeAttack
+      firstFrame: 0
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SlimeBeingHit
+      takeName: SlimeBeingHit
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SlimeMoveForward
+      takeName: SlimeMoveForward
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SlimeRestJiggle
+      takeName: SlimeRestJiggle
+      firstFrame: 0
+      lastFrame: 74
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SlimeRestJiggle2
+      takeName: SlimeRestJiggle2
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
