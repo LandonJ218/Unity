@@ -7,14 +7,14 @@ public class PlayerController : MonoBehaviour {
 
     NavMeshAgent playerAgent;
     InventoryController inventoryController;
-
     GameObject currentTarget = null;
     private bool hasInteracted = true;
-
+    protected PlayerAnimationController playerAnimationController;
     
 	// Use this for initialization
 	void Start () {
         playerAgent = GetComponent<NavMeshAgent>();
+        playerAnimationController = transform.GetChild(0).GetComponent<PlayerAnimationController>();
         inventoryController = transform.Find("Inventory").GetComponent<InventoryController>();
     }
 	
@@ -31,12 +31,12 @@ public class PlayerController : MonoBehaviour {
                 }
                 if(!playerAgent.hasPath || playerAgent.velocity.sqrMagnitude == 0f)
                 {
-                    PlayerAnimationEventHandler.HandleAnimation("PlayerIdle");
+                    playerAnimationController.HandleAnimation("PlayerIdle");
                 }
             }
             else
             {
-                PlayerAnimationEventHandler.HandleAnimation("PlayerRunning");
+                playerAnimationController.HandleAnimation("PlayerRunning");
             }
         }
         GetInput();

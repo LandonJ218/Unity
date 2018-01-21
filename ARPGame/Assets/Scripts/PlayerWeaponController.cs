@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerWeaponController : MonoBehaviour {
-
+    protected PlayerAnimationController playerAnimationController;
     public Transform projectileSpawn;
     public IWeapon equippedIWeapon;
 
     void Start()
     {
         projectileSpawn = transform.Find("ProjectileSpawn");
+        playerAnimationController = transform.GetChild(0).GetComponent<PlayerAnimationController>();
     }
 
     void Update()
@@ -24,19 +25,19 @@ public class PlayerWeaponController : MonoBehaviour {
         }
     }
 
-    public void PerformWeaponAttack()
+    private void PerformWeaponAttack()
     {
-        if(equippedIWeapon != null)
+        if(playerAnimationController != null)
         {
-            equippedIWeapon.PerformAttack();
+            playerAnimationController.HandleAnimation("PlayerAttack");
         }
     }
 
-    public void PerformWeaponAttack2()
+    private void PerformWeaponAttack2()
     {
-        if(equippedIWeapon != null)
+        if(playerAnimationController != null)
         {
-            equippedIWeapon.PerformAttack2();
+            playerAnimationController.HandleAnimation("PlayerAttack");
         }
     }
 }

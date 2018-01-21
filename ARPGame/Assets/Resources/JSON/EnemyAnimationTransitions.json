@@ -1,0 +1,22 @@
+{
+    "AnimationTransistions" :[{
+        "AnimationName": "EnemyAttack",
+            "AnimationTransistionArgs" : [
+                {
+                    "ArgumentName" : "Attack",
+                    "ArgumentType" : "Trigger",
+                    "ArgumentValue" : ""
+                }
+            ]}
+        ,
+
+        {
+            "AnimationName": "EnemyIdle",
+            "AnimationTransistionArgs" : [{
+                "ArgumentName" : "IsMoving",
+                "ArgumentType" : "Bool",
+                "ArgumentValue" : "False"
+            }]   
+        }
+    ]
+}

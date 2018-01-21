@@ -4,14 +4,11 @@ using System.IO;
 using UnityEngine;
 
 public class PlayerAnimationController : BaseAnimationController {
-
+	
 	void Start () {
-		anim = GetComponent<Animator>();
-		animationTransistions = new List<AnimationTransistion>();
-
+		this.anim = GetComponent<Animator>();
+		this.animationTransistions = new List<AnimationTransistion>();
 		LoadAnimationTransitions();
-		PlayerAnimationEventHandler.OnHandleAnimation += HandleAnimation;
-		PlayerAnimationEventHandler.OnHandleAnimationArgs += HandleAnimation;
 	}
 
 	public void EnableWeapon()
@@ -33,4 +30,9 @@ public class PlayerAnimationController : BaseAnimationController {
 			}
 		}
     }
+
+	public void FireProjectile()
+	{
+		//Ideally this is where the projectile will instantiate.
+	}
 }

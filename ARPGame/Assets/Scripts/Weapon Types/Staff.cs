@@ -14,14 +14,12 @@ public class Staff : EquippableModel, IWeapon, IProjectileWeapon
 
     public void PerformAttack()
     {
-        PlayerAnimationEventHandler.HandleAnimation("PlayerAttack");
         FireProjectile();
         Debug.Log("Attacking with " + this.name + "!");
     }
 
     public void PerformAttack2()    // Sample of another attack and how it would need to reference it's own trigger (part of the animator object)
     {
-        PlayerAnimationEventHandler.HandleAnimation("PlayerAttack");
         Debug.Log("Attacking with " + this.name + "!");
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordModel : EquippableModel, IWeapon
+public class Sword : EquippableModel, IWeapon
 {
 
     void OnTriggerEnter(Collider col)
@@ -20,12 +20,12 @@ public class SwordModel : EquippableModel, IWeapon
 
     public void PerformAttack()
     {
-        PlayerAnimationEventHandler.HandleAnimation("PlayerAttack");
+       
     }
 
     public void PerformAttack2()
     {
-        PlayerAnimationEventHandler.HandleAnimation("PlayerAttack");
+        
     }
 
 }
