@@ -7,6 +7,9 @@ public class Slime : NPC {
     // Reference to playerObject for testing
     public GameObject player;
 
+    float attackInterval = 2.0f;
+    float nextAttackTime = 0.0f;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -34,8 +37,16 @@ public class Slime : NPC {
                 // Key to this check is that stoppingDistance is set to 0 when current destination in not interactable; hence those "clicks" won't call Interact()
                 if (nav.remainingDistance <= nav.stoppingDistance)
                 {
-                    // ToDo: some kind of interaction here
-                    hasInteracted = true;             // For right now these NPCs will track the player until in close proximity
+                    if(Time.time > nextAttackTime)
+                    {
+                        PerformAttack();
+                        nextAttackTime = Time.time + attackInterval;
+                        //hasInteracted = true; 
+                    }
+                }
+                else
+                {
+                    nextAttackTime = Time.time + attackInterval;
                 }
             }
             
@@ -44,7 +55,7 @@ public class Slime : NPC {
 
     public void PerformAttack()
     {
-
+        player.GetComponent<PlayerHealth>().TakeDamage(5);
     }
 
 }
