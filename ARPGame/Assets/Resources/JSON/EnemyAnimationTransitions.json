@@ -1,6 +1,6 @@
 {
     "AnimationTransistions" :[{
-        "AnimationName": "PlayerAttack",
+        "AnimationName": "EnemyAttack",
             "AnimationTransistionArgs" : [
                 {
                     "ArgumentName" : "Attack",
@@ -11,18 +11,9 @@
         ,
 
         {
-            "AnimationName": "PlayerRunning",
+            "AnimationName": "EnemyIdle",
             "AnimationTransistionArgs" : [{
-                "ArgumentName" : "IsRunning",
-                "ArgumentType" : "Bool",
-                "ArgumentValue" : "True"
-            }]
-        },
-
-        {
-            "AnimationName": "PlayerIdle",
-            "AnimationTransistionArgs" : [{
-                "ArgumentName" : "IsRunning",
+                "ArgumentName" : "IsMoving",
                 "ArgumentType" : "Bool",
                 "ArgumentValue" : "False"
             }]   

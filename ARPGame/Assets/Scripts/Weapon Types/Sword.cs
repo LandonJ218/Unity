@@ -1,9 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordModel : EquippableModel {
-
+public class Sword : EquippableModel, IWeapon
+{
 
     void OnTriggerEnter(Collider col)
     {
@@ -16,6 +16,16 @@ public class SwordModel : EquippableModel {
             }
             Debug.Log("Hit: " + col.name);
         }
+    }
+
+    public void PerformAttack()
+    {
+       
+    }
+
+    public void PerformAttack2()
+    {
+        
     }
 
 }

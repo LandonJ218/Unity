@@ -7,14 +7,14 @@ public class PlayerController : MonoBehaviour {
 
     NavMeshAgent playerAgent;
     InventoryController inventoryController;
-
     GameObject currentTarget = null;
     private bool hasInteracted = true;
-
+    protected PlayerAnimationController playerAnimationController;
     
 	// Use this for initialization
 	void Start () {
         playerAgent = GetComponent<NavMeshAgent>();
+        playerAnimationController = transform.GetChild(0).GetComponent<PlayerAnimationController>();
         inventoryController = transform.Find("Inventory").GetComponent<InventoryController>();
     }
 	
@@ -31,8 +31,12 @@ public class PlayerController : MonoBehaviour {
                 }
                 if(!playerAgent.hasPath || playerAgent.velocity.sqrMagnitude == 0f)
                 {
-                    PlayerAnimationEventHandler.HandleAnimation("PlayerIdle");
+                    playerAnimationController.HandleAnimation("PlayerIdle");
                 }
+            }
+            else
+            {
+                playerAnimationController.HandleAnimation("PlayerRunning");
             }
         }
         GetInput();
@@ -43,7 +47,6 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
         {
             Debug.Log("Mouse click detected.");
-            PlayerAnimationEventHandler.HandleAnimation("PlayerRunning");
             GetInteractionClick();
         }
         if (Input.GetAxis("Fire1") > 0f)

@@ -19,13 +19,6 @@ public class InventoryController : MonoBehaviour {
 
     public void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.T))                             // was used for equpping prior to inventory ui having clickable items
-        //{
-        //    if (GetComponent<InventoryController>().baggedItems.Count > 0)
-        //    {
-        //        EquipItem((Equippable)baggedItems[0]);
-        //    }
-        //}
         if (Input.GetKeyDown(KeyCode.G))
         {
             if (GetComponent<InventoryController>().baggedItems.Count > 0)
