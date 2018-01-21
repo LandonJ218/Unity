@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Slime : NPC {
+public class Slime : Enemy {
 
     // Reference to playerObject for testing
     public GameObject player;
 
-    float attackInterval = 2.0f;
+    float attackInterval = 0.5f;
     float nextAttackTime = 0.0f;
 
     void Start()
     {
-        currentHealth = maxHealth;
-
         // Reference to playerObject can be provided in inspector for testing
         if (player != null)
         {
