@@ -1,25 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealth : MonoBehaviour {
+public sealed class PlayerHealth : MonoBehaviour 
+{
+    //Instance variable
+    private static PlayerHealth instance = null;
 
+    private Slider healthBar;
+    private int maxHealth = 100;
+    private int currentHealth;
 
-    public Slider healthBar;
-
-    int maxHealth = 100;
-    int currentHealth;
+    public int CurrentHealth
+    {
+        get { return currentHealth; }
+        set { currentHealth = value; }
+    }
 
     private void Start()
     {
+        healthBar = GameObject.Find("HealthBar").GetComponent<Slider>();
         healthBar.maxValue = maxHealth;
-        currentHealth = maxHealth;
+        CurrentHealth = maxHealth;
+        Update();
     }
 
     private void Update()
     {
-        healthBar.value = currentHealth;
+        healthBar.value = CurrentHealth;
     }
 
     public int GetMaxHealth()
@@ -29,21 +36,29 @@ public class PlayerHealth : MonoBehaviour {
     public void SetMaxHealth(int healthBonus)
     {
         maxHealth += healthBonus;
-        currentHealth += healthBonus;
+        CurrentHealth += healthBonus;
         healthBar.maxValue = maxHealth;
     }
-
-    public void TakeDamage(int damage)
+    
+    public void ChangeHealth(int delta)
     {
-        currentHealth -= damage;
-        if(currentHealth < 1)
-        {
+        CurrentHealth += delta;
+        
+        if(CurrentHealth < 1)
             Die();
-        }
+
+        Update();
     }
 
     private void Die()
     {
         Debug.Log(gameObject.name + " is dead!");
     }
+
+   public static PlayerHealth Instance()
+   {
+      if(instance == null)
+        instance = new PlayerHealth();
+      return instance;
+   }
 }

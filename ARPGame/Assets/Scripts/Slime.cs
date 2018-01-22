@@ -53,7 +53,7 @@ public class Slime : Enemy {
 
     public void PerformAttack()
     {
-        player.GetComponent<PlayerHealth>().TakeDamage(5);
+        player.GetComponent<PlayerHealth>().ChangeHealth(-5);
     }
 
 }
