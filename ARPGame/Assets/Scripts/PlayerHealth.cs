@@ -3,12 +3,19 @@ using UnityEngine.UI;
 
 public sealed class PlayerHealth : MonoBehaviour 
 {
-    //Instance variable
-    private static PlayerHealth instance = null;
-
+    
     private Slider healthBar;
     private int maxHealth = 100;
     private int currentHealth;
+
+    //Instance variable
+    private static PlayerHealth instance = null;
+    public static PlayerHealth Instance()
+    {
+        if (instance == null)
+            instance = new PlayerHealth();
+        return instance;
+    }
 
     public int CurrentHealth
     {
@@ -55,10 +62,4 @@ public sealed class PlayerHealth : MonoBehaviour
         Debug.Log(gameObject.name + " is dead!");
     }
 
-   public static PlayerHealth Instance()
-   {
-      if(instance == null)
-        instance = new PlayerHealth();
-      return instance;
-   }
 }
