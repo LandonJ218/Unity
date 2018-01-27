@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemyHealth : MonoBehaviour {
 
     public Slider healthBar;
-
+    
     int maxHealth = 100;
     int currentHealth;
 
@@ -20,6 +20,9 @@ public class EnemyHealth : MonoBehaviour {
     {
         healthBar.value = currentHealth;
         // TODO: need something here maybe to help healthbar track associated enemy
+        Vector3 healthBarPos = new Vector3(transform.position.x, transform.position.y + 3, transform.position.z);
+        healthBar.transform.position = Camera.main.WorldToScreenPoint(healthBarPos);
+
     }
 
     public int GetMaxHealth()
