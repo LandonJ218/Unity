@@ -44,6 +44,8 @@ public class EnemyHealth : MonoBehaviour {
 
     private void Die()
     {
+        Destroy(healthBar.gameObject);
+        Destroy(gameObject);
         Debug.Log(gameObject.name + " is dead!");
     }
 }

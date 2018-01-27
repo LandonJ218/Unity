@@ -28,13 +28,17 @@ public class Fireball : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider col)
     {
-        if (collision.transform.tag == "Enemy")
+        if (col.transform.root != transform.root)   // Stop hitting yourself!
         {
-            collision.transform.GetComponent<IEnemy>().TakeDamage(Damage);
+            if (col.tag == "Enemy")
+            {
+                col.GetComponent<EnemyHealth>().TakeDamage(25);
+                Debug.Log("Hit: " + col.name);
+            }
+            Extinguish();
         }
-        Extinguish();
     }
 
     void Extinguish()
