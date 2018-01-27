@@ -15,7 +15,7 @@ public class Fireball : MonoBehaviour {
         Range = 20f;
         Damage = 5;
         spawnPosition = transform.position;
-        GetComponent<Rigidbody>().AddForce(Direction * 50f);    // 50f value here is a speed that can be replaced with a variable later.
+        GetComponent<Rigidbody>().AddForce(Direction * 100f);    // 50f value here is a speed that can be replaced with a variable later.
     }
 
     void Update()

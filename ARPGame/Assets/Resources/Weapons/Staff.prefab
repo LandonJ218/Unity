@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4545878744470086}
   - component: {fileID: 65141699550974878}
-  - component: {fileID: 114118862352545538}
   - component: {fileID: 114018285665282328}
   m_Layer: 0
   m_Name: Staff
@@ -40,7 +39,7 @@ GameObject:
   - component: {fileID: 33974028168376726}
   - component: {fileID: 23290122406004580}
   - component: {fileID: 65276179716963398}
-  - component: {fileID: 114867817951910400}
+  - component: {fileID: 114373439577188072}
   m_Layer: 0
   m_Name: StaffModel
   m_TagString: Untagged
@@ -154,21 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Models: []
   Slot: MainHand
---- !u!114 &114118862352545538
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1247368343420984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 173e65c29c349274ab650fcfe7302854, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Side: 
-  rotationForSlot: {x: 0, y: 0, z: 0}
-  offsetForSlot: {x: 0, y: 0, z: 0}
---- !u!114 &114867817951910400
+--- !u!114 &114373439577188072
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -176,7 +161,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1725019646558394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc7f24f8d7c4c1744a0fa254733e67e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 173e65c29c349274ab650fcfe7302854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Side: 

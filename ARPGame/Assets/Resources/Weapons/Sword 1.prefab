@@ -38,12 +38,11 @@ GameObject:
   - component: {fileID: 4957864073790376}
   - component: {fileID: 33417395016196570}
   - component: {fileID: 23409883810317906}
-  - component: {fileID: 222935491809792478}
   - component: {fileID: 64029630686639142}
-  - component: {fileID: 114109025676298096}
+  - component: {fileID: 114874914240016370}
   m_Layer: 0
   m_Name: SwordModel
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,20 +141,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 2.7, z: 0.5}
   m_Center: {x: 0, y: 0.1, z: 0}
---- !u!114 &114109025676298096
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1640421681168018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc7f24f8d7c4c1744a0fa254733e67e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Side: 
-  rotationForSlot: {x: -90, y: 90, z: 90}
-  offsetForSlot: {x: 0, y: 0.8, z: 0}
 --- !u!114 &114336570682839768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,9 +154,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Models: []
   Slot: MainHand
---- !u!222 &222935491809792478
-CanvasRenderer:
+--- !u!114 &114874914240016370
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1640421681168018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca34a1fd49444b4e92ac7541e5e8dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Side: 
+  rotationForSlot: {x: -90, y: 90, z: 90}
+  offsetForSlot: {x: 0, y: 0.8, z: 0}
