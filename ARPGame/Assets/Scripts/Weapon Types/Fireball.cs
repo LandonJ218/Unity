@@ -6,6 +6,7 @@ public class Fireball : MonoBehaviour {
 
 	public Vector3 Direction { get; set; }
     public float Range { get; set; }
+    public float Speed { get; set; }
     public int Damage { get; set; }
 
     Vector3 spawnPosition;
@@ -14,8 +15,9 @@ public class Fireball : MonoBehaviour {
     {
         Range = 20f;
         Damage = 5;
+        Speed = 250f;
         spawnPosition = transform.position;
-        GetComponent<Rigidbody>().AddForce(Direction * 100f);    // 50f value here is a speed that can be replaced with a variable later.
+        GetComponent<Rigidbody>().AddForce(Direction * Speed);
     }
 
     void Update()

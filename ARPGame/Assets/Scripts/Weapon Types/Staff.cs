@@ -10,6 +10,11 @@ public class Staff : EquippableModel, IWeapon, IProjectileWeapon
     void Start()
     {
         fireball = Resources.Load<Fireball>("Weapons/Projectiles/Fireball");
+        if(fireball != null)
+        {
+            Debug.Log(fireball + " loaded.");
+        }
+        Debug.Log("ProjectileSpawn is set to " + ProjectileSpawn);
     }
 
     public void PerformAttack()
