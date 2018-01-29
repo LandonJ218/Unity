@@ -10,6 +10,11 @@ public class Staff : EquippableModel, IWeapon, IProjectileWeapon
     void Start()
     {
         fireball = Resources.Load<Fireball>("Weapons/Projectiles/Fireball");
+        if(fireball != null)
+        {
+            Debug.Log(fireball + " loaded.");
+        }
+        Debug.Log("ProjectileSpawn is set to " + ProjectileSpawn);
     }
 
     public void PerformAttack()
@@ -23,14 +28,14 @@ public class Staff : EquippableModel, IWeapon, IProjectileWeapon
         Debug.Log("Attacking with " + this.name + "!");
     }
 
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.tag == "Enemy")
-        {
-            col.GetComponent<IEnemy>().TakeDamage(transform.root.GetComponent<CharacterStats>().stats.Find(x => x.StatName == "STR").GetCalculatedStatValue());
-        }
-        Debug.Log("Hit: " + col.name);
-    }
+    // Not sure I want the staff doing melee damage so we may not used this
+    //void OnTriggerEnter(Collider col)
+    //{
+    //    if (col.tag == "Enemy")
+    //    {
+    //        Debug.Log("Hit: " + col.name);
+    //    }
+    //}
 
     public void FireProjectile()
     {

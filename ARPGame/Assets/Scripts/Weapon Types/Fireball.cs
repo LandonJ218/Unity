@@ -6,6 +6,7 @@ public class Fireball : MonoBehaviour {
 
 	public Vector3 Direction { get; set; }
     public float Range { get; set; }
+    public float Speed { get; set; }
     public int Damage { get; set; }
 
     Vector3 spawnPosition;
@@ -14,8 +15,9 @@ public class Fireball : MonoBehaviour {
     {
         Range = 20f;
         Damage = 5;
+        Speed = 250f;
         spawnPosition = transform.position;
-        GetComponent<Rigidbody>().AddForce(Direction * 50f);    // 50f value here is a speed that can be replaced with a variable later.
+        GetComponent<Rigidbody>().AddForce(Direction * Speed);
     }
 
     void Update()
@@ -26,13 +28,17 @@ public class Fireball : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider col)
     {
-        if (collision.transform.tag == "Enemy")
+        if (col.transform.root != transform.root)   // Stop hitting yourself!
         {
-            collision.transform.GetComponent<IEnemy>().TakeDamage(Damage);
+            if (col.tag == "Enemy")
+            {
+                col.GetComponent<EnemyHealth>().TakeDamage(25);
+                Debug.Log("Hit: " + col.name);
+            }
+            Extinguish();
         }
-        Extinguish();
     }
 
     void Extinguish()

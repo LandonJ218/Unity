@@ -71,19 +71,22 @@ public class InventoryController : MonoBehaviour {
             x.transform.SetParent(modelAnchor.transform, false);
             x.OrientForSlot();
             x.GetComponent<MeshRenderer>().enabled = true;
+
+            // Check if model is projectile weapon
+            if (x.gameObject.GetComponent<IWeapon>() != null)
+            {
+                playerWeaponController.equippedIWeapon = x.gameObject.GetComponent<IWeapon>();
+                if (x.gameObject.GetComponent<IProjectileWeapon>() != null)
+                {
+                    Debug.Log(x.gameObject + " is a projectile weapon.");
+                    x.gameObject.GetComponent<IProjectileWeapon>().ProjectileSpawn = playerWeaponController.projectileSpawn;
+                }
+            }
         }
 
         equippedItems.Add(itemToEquip);
         UIEventHandler.ItemEquipped(itemToEquip);
         characterStats.AddStatBonuses(itemToEquip.Stats);
-        if (itemToEquip.gameObject.GetComponent<IWeapon>() != null)
-        {
-            playerWeaponController.equippedIWeapon = itemToEquip.gameObject.GetComponent<IWeapon>();
-            if (itemToEquip.gameObject.GetComponent<IProjectileWeapon>() != null)
-            {
-                itemToEquip.gameObject.GetComponent<IProjectileWeapon>().ProjectileSpawn = playerWeaponController.projectileSpawn;
-            }
-        }
 
         Debug.Log("Equipped: " + itemToEquip);
     }
