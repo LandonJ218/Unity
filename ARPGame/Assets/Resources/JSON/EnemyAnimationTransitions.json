@@ -17,6 +17,24 @@
                 "ArgumentType" : "Bool",
                 "ArgumentValue" : "False"
             }]   
+        },
+
+        {
+            "AnimationName": "EnemyForward",
+            "AnimationTransistionArgs" : [{
+                "ArgumentName" : "IsMoving",
+                "ArgumentType" : "Bool",
+                "ArgumentValue" : "True"
+            }]   
+        },
+
+        {
+            "AnimationName": "EnemyHit",
+            "AnimationTransistionArgs" : [{
+                "ArgumentName" : "Hit",
+                "ArgumentType" : "Trigger",
+                "ArgumentValue" : ""
+            }]   
         }
     ]
 }
