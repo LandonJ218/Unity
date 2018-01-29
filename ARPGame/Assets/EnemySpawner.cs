@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour {
     float nextSpawnTime = 0.0f;
 
     void Start () {
-        slime = Resources.Load<Slime>("NPC/Enemies/Slime");
+        slime = Resources.Load<Slime>("NPC/Enemies/Slime3");
         healtBar = Resources.Load<Slider>("UI/EnemyHealthBar");
         enemyContainer = GameObject.Find("Enemies");
     }

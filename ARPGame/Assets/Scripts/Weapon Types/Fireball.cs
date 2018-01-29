@@ -34,6 +34,7 @@ public class Fireball : MonoBehaviour {
         {
             if (col.tag == "Enemy")
             {
+                col.transform.GetChild(0).GetComponent<EnemyAnimationController>().HandleAnimation("EnemyHit");
                 col.GetComponent<EnemyHealth>().TakeDamage(25);
                 Debug.Log("Hit: " + col.name);
             }
