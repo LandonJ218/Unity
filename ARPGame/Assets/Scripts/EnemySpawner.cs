@@ -8,6 +8,8 @@ public class EnemySpawner : MonoBehaviour {
     Slime slime { get; set; }
     Slider healtBar { get; set; }
     GameObject enemyContainer { get; set; }
+    int enemyCount = 0;
+    public Text enemyCountText;
 
     float spawnInterval = 2.0f;
     float nextSpawnTime = 0.0f;
@@ -36,5 +38,6 @@ public class EnemySpawner : MonoBehaviour {
         newHealthBar.transform.SetParent(enemyContainer.transform.Find("Canvas"), false);
         newSlime.GetComponent<EnemyHealth>().healthBar = newHealthBar;
         newSlime.player = GameObject.Find("Player");
+        enemyCountText.text = (enemyCount++).ToString();
     }
 }

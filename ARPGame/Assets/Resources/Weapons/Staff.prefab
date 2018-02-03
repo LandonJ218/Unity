@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4545878744470086}
   - component: {fileID: 65141699550974878}
   - component: {fileID: 114018285665282328}
+  - component: {fileID: 122732596227763146}
   m_Layer: 0
   m_Name: Staff
   m_TagString: Untagged
@@ -167,3 +168,14 @@ MonoBehaviour:
   Side: 
   rotationForSlot: {x: -90, y: 90, z: 90}
   offsetForSlot: {x: 0, y: 0.8, z: 0}
+--- !u!122 &122732596227763146
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1247368343420984}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4281085183
+  m_Size: 1

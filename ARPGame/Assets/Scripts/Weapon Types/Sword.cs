@@ -12,6 +12,7 @@ public class Sword : EquippableModel, IWeapon
             if (col.tag == "Enemy")
             {
                 Debug.Log("Hit: " + col.name);
+                col.GetComponent<EnemyHealth>().TakeDamage(50);
             }
         }
     }

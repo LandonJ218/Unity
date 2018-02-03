@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1160765908792864}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.759853, y: 1.9982147, z: -2.4474258}
+  m_LocalPosition: {x: -14.704193, y: 3.47, z: -20.136383}
   m_LocalScale: {x: 2, y: 3, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,6 +52,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -67,6 +68,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -102,8 +104,6 @@ MonoBehaviour:
   - 'Here''s some test dialogue. It '
   - spans multiple lines.
   - Bye.
-  currentHealth: 0
-  maxHealth: 0
 --- !u!136 &136960964739046676
 CapsuleCollider:
   m_ObjectHideFlags: 1

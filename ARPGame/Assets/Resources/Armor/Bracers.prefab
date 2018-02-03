@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 4757236504659580}
   - component: {fileID: 65896814810352200}
   - component: {fileID: 114491178626069464}
+  - component: {fileID: 122208485712935648}
   m_Layer: 0
   m_Name: Bracers
   m_TagString: Untagged
@@ -240,3 +241,14 @@ MonoBehaviour:
   Side: Right
   rotationForSlot: {x: -90, y: -90, z: 0}
   offsetForSlot: {x: 0, y: 0, z: 0}
+--- !u!122 &122208485712935648
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1209593694503612}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294917922
+  m_Size: 1

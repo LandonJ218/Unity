@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4053439869070006}
   - component: {fileID: 114659343115047312}
   - component: {fileID: 65143332959484698}
+  - component: {fileID: 122994982861659086}
   m_Layer: 0
   m_Name: Chest 1
   m_TagString: Untagged
@@ -153,3 +154,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Models: []
   Slot: Chest
+--- !u!122 &122994982861659086
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1502058994386514}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294468131
+  m_Size: 1

@@ -40,9 +40,24 @@ public class InventoryController : MonoBehaviour {
     {
         if (baggedItems.Remove(itemToDrop))                           // needs to be updated to handle new equippable item structure (equippable / equippableModel)
         {
+            if (itemToDrop.GetComponent("Halo") != null)
+            {
+                Behaviour halo = (Behaviour)itemToDrop.GetComponent("Halo");
+                halo.enabled = true;
+            }
+            if (itemToDrop.GetComponent<Equippable>() != null)
+            {
+                foreach (EquippableModel x in itemToDrop.GetComponent<Equippable>().Models)
+                {
+                    x.GetComponent<MeshRenderer>().enabled = true;
+                }
+            }
+            else
+            {
+                itemToDrop.GetComponent<MeshRenderer>().enabled = true;
+            }
             UIEventHandler.ItemRemovedFromInventory(itemToDrop);
             itemToDrop.transform.SetParent(null, true);
-            itemToDrop.GetComponent<MeshRenderer>().enabled = true;
             itemToDrop.GetComponent<Collider>().enabled = true;
         }
         
@@ -102,6 +117,11 @@ public class InventoryController : MonoBehaviour {
 
     public void PrepItemForBag(InventoryItem itemToPrep)                    
     {
+        if(itemToPrep.GetComponent("Halo") != null)
+        {
+            Behaviour halo = (Behaviour)itemToPrep.GetComponent("Halo");
+            halo.enabled = false;
+        }
         itemToPrep.gameObject.transform.SetParent(gameObject.transform, false);
         itemToPrep.gameObject.transform.localPosition = Vector3.zero;
         if (itemToPrep.GetComponent<Equippable>() != null)
@@ -117,9 +137,9 @@ public class InventoryController : MonoBehaviour {
         }
         else
         {
-            itemToPrep.GetComponent<MeshRenderer>().enabled = false;
-            itemToPrep.GetComponent<Collider>().enabled = false;
+            itemToPrep.GetComponent<MeshRenderer>().enabled = false; 
         }
+        itemToPrep.GetComponent<Collider>().enabled = false;
     }
 
     public GameObject FindEquipmentSlot(GameObject currentObject, string targetSlot)      // NOT TESTED ENOUGH

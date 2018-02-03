@@ -14,7 +14,7 @@ public class Fireball : MonoBehaviour {
     void Start()
     {
         Range = 20f;
-        Damage = 5;
+        Damage = 100;
         Speed = 250f;
         spawnPosition = transform.position;
         GetComponent<Rigidbody>().AddForce(Direction * Speed);
@@ -34,8 +34,8 @@ public class Fireball : MonoBehaviour {
         {
             if (col.tag == "Enemy")
             {
-                col.GetComponent<EnemyHealth>().TakeDamage(25);
                 Debug.Log("Hit: " + col.name);
+                col.GetComponent<EnemyHealth>().TakeDamage(Damage);
             }
             Extinguish();
         }
