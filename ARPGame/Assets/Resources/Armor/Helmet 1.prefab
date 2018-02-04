@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 4668110618618222}
   - component: {fileID: 114756079587051238}
   - component: {fileID: 65044272269765472}
+  - component: {fileID: 122454578278934964}
   m_Layer: 0
   m_Name: Helmet 1
   m_TagString: Untagged
@@ -87,7 +88,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 99fdebd3c2b896a49a703b087a55e62b, type: 2}
+  - {fileID: 2100000, guid: f00f50e663f1c3946afa674d5944697c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -153,3 +154,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Models: []
   Slot: Head
+--- !u!122 &122454578278934964
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1873820911601844}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294924073
+  m_Size: 1

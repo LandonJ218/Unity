@@ -40,9 +40,24 @@ public class InventoryController : MonoBehaviour {
     {
         if (baggedItems.Remove(itemToDrop))                           // needs to be updated to handle new equippable item structure (equippable / equippableModel)
         {
+            if (itemToDrop.GetComponent("Halo") != null)
+            {
+                Behaviour halo = (Behaviour)itemToDrop.GetComponent("Halo");
+                halo.enabled = true;
+            }
+            if (itemToDrop.GetComponent<Equippable>() != null)
+            {
+                foreach (EquippableModel x in itemToDrop.GetComponent<Equippable>().Models)
+                {
+                    x.GetComponent<MeshRenderer>().enabled = true;
+                }
+            }
+            else
+            {
+                itemToDrop.GetComponent<MeshRenderer>().enabled = true;
+            }
             UIEventHandler.ItemRemovedFromInventory(itemToDrop);
             itemToDrop.transform.SetParent(null, true);
-            itemToDrop.GetComponent<MeshRenderer>().enabled = true;
             itemToDrop.GetComponent<Collider>().enabled = true;
         }
         
@@ -71,19 +86,22 @@ public class InventoryController : MonoBehaviour {
             x.transform.SetParent(modelAnchor.transform, false);
             x.OrientForSlot();
             x.GetComponent<MeshRenderer>().enabled = true;
+
+            // Check if model is projectile weapon
+            if (x.gameObject.GetComponent<IWeapon>() != null)
+            {
+                playerWeaponController.equippedIWeapon = x.gameObject.GetComponent<IWeapon>();
+                if (x.gameObject.GetComponent<IProjectileWeapon>() != null)
+                {
+                    Debug.Log(x.gameObject + " is a projectile weapon.");
+                    x.gameObject.GetComponent<IProjectileWeapon>().ProjectileSpawn = playerWeaponController.projectileSpawn;
+                }
+            }
         }
 
         equippedItems.Add(itemToEquip);
         UIEventHandler.ItemEquipped(itemToEquip);
         characterStats.AddStatBonuses(itemToEquip.Stats);
-        if (itemToEquip.gameObject.GetComponent<IWeapon>() != null)
-        {
-            playerWeaponController.equippedIWeapon = itemToEquip.gameObject.GetComponent<IWeapon>();
-            if (itemToEquip.gameObject.GetComponent<IProjectileWeapon>() != null)
-            {
-                itemToEquip.gameObject.GetComponent<IProjectileWeapon>().ProjectileSpawn = playerWeaponController.projectileSpawn;
-            }
-        }
 
         Debug.Log("Equipped: " + itemToEquip);
     }
@@ -99,6 +117,11 @@ public class InventoryController : MonoBehaviour {
 
     public void PrepItemForBag(InventoryItem itemToPrep)                    
     {
+        if(itemToPrep.GetComponent("Halo") != null)
+        {
+            Behaviour halo = (Behaviour)itemToPrep.GetComponent("Halo");
+            halo.enabled = false;
+        }
         itemToPrep.gameObject.transform.SetParent(gameObject.transform, false);
         itemToPrep.gameObject.transform.localPosition = Vector3.zero;
         if (itemToPrep.GetComponent<Equippable>() != null)
@@ -114,9 +137,9 @@ public class InventoryController : MonoBehaviour {
         }
         else
         {
-            itemToPrep.GetComponent<MeshRenderer>().enabled = false;
-            itemToPrep.GetComponent<Collider>().enabled = false;
+            itemToPrep.GetComponent<MeshRenderer>().enabled = false; 
         }
+        itemToPrep.GetComponent<Collider>().enabled = false;
     }
 
     public GameObject FindEquipmentSlot(GameObject currentObject, string targetSlot)      // NOT TESTED ENOUGH

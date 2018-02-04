@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4397529437951764}
   - component: {fileID: 114621143869584468}
   - component: {fileID: 65548583162425802}
+  - component: {fileID: 122346086175784244}
   m_Layer: 0
   m_Name: Shoes
   m_TagString: Untagged
@@ -240,3 +241,14 @@ MonoBehaviour:
   Side: Left
   rotationForSlot: {x: -90, y: -180, z: 0}
   offsetForSlot: {x: -0.02, y: 0, z: 0.05}
+--- !u!122 &122346086175784244
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1122780712535194}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294925592
+  m_Size: 1
