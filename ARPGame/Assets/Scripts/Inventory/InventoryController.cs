@@ -15,6 +15,7 @@ public class InventoryController : MonoBehaviour {
     {
         characterStats = transform.parent.gameObject.GetComponent<CharacterStats>();
         playerWeaponController = transform.parent.gameObject.GetComponent<PlayerWeaponController>();
+        Debug.Log("PlayerWeaponController set to " + playerWeaponController);
     }
 
     public void Update()
@@ -95,6 +96,7 @@ public class InventoryController : MonoBehaviour {
                 {
                     Debug.Log(x.gameObject + " is a projectile weapon.");
                     x.gameObject.GetComponent<IProjectileWeapon>().ProjectileSpawn = playerWeaponController.projectileSpawn;
+                    Debug.Log(x + "'s ProjectileSpawn is set to " + playerWeaponController.projectileSpawn + ".");
                 }
             }
         }
@@ -142,7 +144,7 @@ public class InventoryController : MonoBehaviour {
         itemToPrep.GetComponent<Collider>().enabled = false;
     }
 
-    public GameObject FindEquipmentSlot(GameObject currentObject, string targetSlot)      // NOT TESTED ENOUGH
+    public GameObject FindEquipmentSlot(GameObject currentObject, string targetSlot)     
     {
         GameObject targetObject = null;
         int childCount = currentObject.transform.childCount;

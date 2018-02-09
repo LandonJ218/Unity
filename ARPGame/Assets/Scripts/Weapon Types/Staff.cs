@@ -14,7 +14,6 @@ public class Staff : EquippableModel, IWeapon, IProjectileWeapon
         {
             Debug.Log(fireball + " loaded.");
         }
-        Debug.Log("ProjectileSpawn is set to " + ProjectileSpawn);
     }
 
     public void PerformAttack()

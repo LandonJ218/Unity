@@ -9,7 +9,6 @@ public class PlayerWeaponController : MonoBehaviour {
 
     void Start()
     {
-        projectileSpawn = transform.Find("ProjectileSpawn");
         playerAnimationController = transform.GetChild(0).GetComponent<PlayerAnimationController>();
     }
 
