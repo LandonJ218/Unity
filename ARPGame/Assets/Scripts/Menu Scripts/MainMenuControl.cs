@@ -5,22 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuControl: MonoBehaviour {
 
-    //just some arbitrary variable that could be passed to the next scene for choosing a weapon
-    //int would probably work better than string array
-    private string[] weaponOptions = new string[] {"sword", "staff" };
-   
-    //handles button onClick() and loads scene based on its selected index number found in build settings
-    public void StartGameSword(int sceneIndex)
+    public GameController gameController;
+
+    public void StartGameEasy()
     {
-        //Set through inspector of button
-        //0 == MainMenu
-        //1 == Area01
-        SceneManager.LoadScene(sceneIndex);
+        gameController.StartGame(0);
     }
 
-    public void StartGameStaff(int sceneIndex)
+    public void StartGameHard()
     {
-        SceneManager.LoadScene(sceneIndex);
+        gameController.StartGame(1);
     }
 
     //quit game on click, has a check for if the game is running within editor
