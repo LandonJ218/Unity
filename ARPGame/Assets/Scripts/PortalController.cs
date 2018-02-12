@@ -17,7 +17,7 @@ public class PortalController : MonoBehaviour {
         {
             EnemySpawner newPortal = Instantiate(enemySpawner);
             newPortal.transform.SetParent(gameObject.transform, false);
-            newPortal.transform.Translate(Random.Range(-300, 300), 0, Random.Range(-300, 300));
+            newPortal.transform.Translate(Random.Range(-100, 100), 0, Random.Range(-100, 100));
         }
         
     }

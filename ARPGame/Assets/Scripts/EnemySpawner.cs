@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemySpawner : MonoBehaviour {
+public class EnemySpawner : Enemy {
 
     Slime slime { get; set; }
     Slider healtBar { get; set; }
     GameObject enemyContainer { get; set; }
 
-    float spawnInterval = 2.0f;
+    float spawnInterval = 5.0f;
     float nextSpawnTime = 0.0f;
 
     void Start () {
         slime = Resources.Load<Slime>("NPC/Enemies/Slime3");
         healtBar = Resources.Load<Slider>("UI/EnemyHealthBar");
-        enemyContainer = GameObject.Find("Enemies"); 
+        enemyContainer = GameObject.Find("Enemies");
+
+
+        Slider newHealthBar = Instantiate(healtBar);
+        newHealthBar.transform.SetParent(enemyContainer.transform.Find("Canvas"), false);
+        transform.GetComponent<EnemyHealth>().healthBar = newHealthBar;
     }
 	
 	void Update () {

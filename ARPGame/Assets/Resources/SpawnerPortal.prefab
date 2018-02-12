@@ -21,9 +21,11 @@ GameObject:
   - component: {fileID: 4091055347165222}
   - component: {fileID: 95037820519512592}
   - component: {fileID: 114209346553175436}
+  - component: {fileID: 114381569471969504}
+  - component: {fileID: 136649881950998922}
   m_Layer: 0
   m_Name: SpawnerPortal
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,7 +216,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa4ab60fd1aaf64aa8f20b13ee82c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCountText: {fileID: 0}
+  enemyName: 
+--- !u!114 &114381569471969504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1605723954624732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e9a0c7373639bc41b191c7f873ab48d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+--- !u!136 &136649881950998922
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1605723954624732}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 3
+  m_Height: 8
+  m_Direction: 1
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!136 &136659289432402442
 CapsuleCollider:
   m_ObjectHideFlags: 1

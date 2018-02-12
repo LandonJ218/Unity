@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Slime : Enemy
 {
 
     // Reference to playerObject for testing
     public GameObject player;
+    public NavMeshAgent nav;
+    public GameObject currentTarget = null;
+    public Vector3 targetLastPosition;
+    public bool hasInteracted = true;
 
     protected EnemyAnimationController enemyAnimationController;
 
@@ -68,4 +73,18 @@ public class Slime : Enemy
         player.GetComponent<PlayerHealth>().ChangeHealth(-5);
     }
 
+    public void MoveToInteraction()
+    {
+        EnsureLookDirection();
+        hasInteracted = false;
+        nav.stoppingDistance = 7f;
+        nav.destination = targetLastPosition;
+    }
+
+    void EnsureLookDirection()
+    {
+        nav.updateRotation = false;
+        nav.transform.LookAt(currentTarget.transform.position);
+        nav.updateRotation = true;
+    }
 }

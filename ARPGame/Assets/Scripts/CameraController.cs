@@ -29,14 +29,14 @@ public class CameraController : MonoBehaviour {
             {
                 if (cameraDistOffset > minOffset)
                 {
-                    cameraDistOffset -= 10;
+                    cameraDistOffset -= 1;
                 }
             }
             else
             {
                 if (cameraDistOffset < maxOffset)
                 {
-                    cameraDistOffset += 10;
+                    cameraDistOffset += 1;
                 }
             }
         }

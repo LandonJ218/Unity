@@ -90,7 +90,6 @@ GameObject:
   - component: {fileID: 33975348712228508}
   - component: {fileID: 135720153971230706}
   - component: {fileID: 23646474582613806}
-  - component: {fileID: 111198466522013248}
   - component: {fileID: 114653501120216808}
   - component: {fileID: 54601752280402034}
   m_Layer: 0
@@ -372,21 +371,6 @@ TrailRenderer:
     generateLightingData: 1
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
---- !u!111 &111198466522013248
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1638518195010606}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: c7c05eca9b904c247aa3abcb43489710, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: c7c05eca9b904c247aa3abcb43489710, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &114653501120216808
 MonoBehaviour:
   m_ObjectHideFlags: 1

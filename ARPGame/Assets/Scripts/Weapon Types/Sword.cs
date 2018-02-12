@@ -11,7 +11,10 @@ public class Sword : EquippableModel, IWeapon
         {
             if (col.tag == "Enemy")
             {
-                col.transform.GetChild(0).GetComponent<EnemyAnimationController>().HandleAnimation("EnemyHit");
+                if (col.transform.childCount > 0 && col.transform.GetChild(0).GetComponent<EnemyAnimationController>() != null)
+                {
+                    col.transform.GetChild(0).GetComponent<EnemyAnimationController>().HandleAnimation("EnemyHit");
+                }
                 col.GetComponent<EnemyHealth>().TakeDamage(25);
                 Debug.Log("Hit: " + col.name);
                 col.GetComponent<EnemyHealth>().TakeDamage(50);

@@ -13,7 +13,7 @@ public class Fireball : MonoBehaviour {
 
     void Start()
     {
-        Range = 20f;
+        Range = 30f;
         Damage = 50;
         Speed = 250f;
         spawnPosition = transform.position;
@@ -34,8 +34,10 @@ public class Fireball : MonoBehaviour {
         {
             if (col.tag == "Enemy")
             {
-
-                col.transform.GetChild(0).GetComponent<EnemyAnimationController>().HandleAnimation("EnemyHit");
+                if(col.transform.childCount > 0 && col.transform.GetChild(0).GetComponent<EnemyAnimationController>() != null)
+                {
+                    col.transform.GetChild(0).GetComponent<EnemyAnimationController>().HandleAnimation("EnemyHit");
+                }
                 Debug.Log("Hit: " + col.name);
                 col.GetComponent<EnemyHealth>().TakeDamage(Damage);
             }
