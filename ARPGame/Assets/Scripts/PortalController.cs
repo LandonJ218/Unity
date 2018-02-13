@@ -6,20 +6,32 @@ public class PortalController : MonoBehaviour {
 
     GameController gameController;
 
-	void Awake () {
+    private float portalSpawnTimer;
+
+
+    void Awake () {
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
 	}
 
     private void Start()
     {
-        EnemySpawner enemySpawner = Resources.Load<EnemySpawner>("SpawnerPortal");
-        for(int i = 0; i <= gameController.gameDifficulty; i++)
+        portalSpawnTimer = Time.time + 5.0f;
+    }
+
+    private void Update()
+    {
+        if (Time.time > portalSpawnTimer)
         {
-            EnemySpawner newPortal = Instantiate(enemySpawner);
-            newPortal.transform.SetParent(gameObject.transform, false);
-            newPortal.transform.Translate(Random.Range(-100, 100), 0, Random.Range(-100, 100));
+            EnemySpawner enemySpawner = Resources.Load<EnemySpawner>("SpawnerPortal");
+            for (int i = 0; i <= gameController.gameDifficulty; i++)
+            {
+                EnemySpawner newPortal = Instantiate(enemySpawner);
+                newPortal.transform.SetParent(gameObject.transform, false);
+                newPortal.transform.Translate(Random.Range(-100, 100), 0, Random.Range(-100, 100));
+            }
+            UIEventHandler.PortalsSpawned();
+            gameObject.GetComponent<PortalController>().enabled = false;
         }
-        
     }
 
 }

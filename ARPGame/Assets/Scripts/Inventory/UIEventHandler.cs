@@ -9,6 +9,9 @@ public class UIEventHandler : MonoBehaviour {
     public static event ItemEventHandler OnItemRemovedFromInventory;
     public static event ItemEventHandler OnItemEquipped;
     public static event ItemEventHandler OnItemUnequipped;
+    public delegate void CombatEventHandler();
+    public static event CombatEventHandler OnPortalDestroyed;
+    public static event CombatEventHandler OnPortalsSpawned;
 
     public static void ItemAddedToInventory(InventoryItem item)
     {
@@ -28,5 +31,15 @@ public class UIEventHandler : MonoBehaviour {
     public static void ItemUnequipped(InventoryItem item)
     {
         OnItemUnequipped(item);
+    }
+
+    public static void PortalDestroyed()
+    {
+        OnPortalDestroyed();
+    }
+
+    public static void PortalsSpawned()
+    {
+        OnPortalsSpawned();
     }
 }

@@ -47,6 +47,10 @@ public class EnemyHealth : MonoBehaviour {
 
     private void Die()
     {
+        if(gameObject.GetComponent<EnemySpawner>() != null)
+        {
+            UIEventHandler.PortalDestroyed();
+        }
         Destroy(healthBar.gameObject);
         Destroy(gameObject);
         Debug.Log(gameObject.name + " is dead!");

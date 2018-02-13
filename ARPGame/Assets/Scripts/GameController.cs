@@ -7,6 +7,8 @@ public class GameController : MonoBehaviour {
 
     public int gameDifficulty;
 
+    private int portalCount;
+
 	// Use this for initialization
 	void Awake () {
         DontDestroyOnLoad(gameObject);
@@ -17,6 +19,22 @@ public class GameController : MonoBehaviour {
     {
         gameDifficulty = difficulty;
         SceneManager.LoadScene(1);
+        UIEventHandler.OnPortalsSpawned += PortalsSpawned;
+        UIEventHandler.OnPortalDestroyed += PortalDestroyed;
     }
 
+    private void PortalsSpawned()
+    {
+        portalCount = GameObject.Find("Portals").transform.childCount;
+        //UIPortalCount.text = portalCount.ToString();
+    }
+    
+    private void PortalDestroyed()
+    {
+        portalCount--;
+        if(portalCount < 1)
+        {
+            // Player Wins   still need an in game window to pop up
+        }
+    }
 }
