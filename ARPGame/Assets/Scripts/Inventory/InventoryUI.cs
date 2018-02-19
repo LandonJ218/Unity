@@ -21,10 +21,19 @@ public class InventoryUI : MonoBehaviour {
         uiBaggedItem = Resources.Load<UIBaggedItem>("UI/UIBaggedItem");
         UIEquippedItems = new List<UIEquippedItem>();
         uiEquippedItem = Resources.Load<UIEquippedItem>("UI/UIEquippedItem");
+
         UIEventHandler.OnItemAddedToInventory += ItemAddedToInventory;
         UIEventHandler.OnItemRemovedFromInventory += ItemRemovedFromInventory;
         UIEventHandler.OnItemEquipped += ItemEquipped;
         UIEventHandler.OnItemUnequipped += ItemUnequipped;
+
+        RectTransform inventoryObject = Resources.Load<RectTransform>("UI/InventoryPanel");
+        inventoryPanel = Instantiate(inventoryObject);
+        inventoryPanel.SetParent(GameObject.Find("UICanvas").transform, false);
+        equippedPanel = inventoryPanel.Find("EquippedPanel").GetComponent<RectTransform>();
+        itemInspectionPanel = inventoryPanel.Find("InventoryInspectionPanel").GetComponent<RectTransform>();
+        scrollViewContent = inventoryPanel.Find("Scroll View").Find("Viewport").Find("Content").GetComponent<RectTransform>();
+
         InventoryIsOpen = false;
         inventoryPanel.gameObject.SetActive(InventoryIsOpen);
 	}

@@ -23,13 +23,13 @@ public class PortalController : MonoBehaviour {
         if (Time.time > portalSpawnTimer)
         {
             EnemySpawner enemySpawner = Resources.Load<EnemySpawner>("SpawnerPortal");
-            for (int i = 0; i <= gameController.gameDifficulty; i++)
+            for (int i = 0; i <= GameController.gameDifficulty; i++)
             {
                 EnemySpawner newPortal = Instantiate(enemySpawner);
                 newPortal.transform.SetParent(gameObject.transform, false);
                 newPortal.transform.Translate(Random.Range(-100, 100), 0, Random.Range(-100, 100));
+                GameController.PortalSpawned();
             }
-            UIEventHandler.PortalsSpawned();
             gameObject.GetComponent<PortalController>().enabled = false;
         }
     }

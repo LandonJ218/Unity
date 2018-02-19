@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemySpawner : Enemy {
 
     Slime slime { get; set; }
-    Slider healtBar { get; set; }
+    Slider healthBar { get; set; }
     GameObject enemyContainer { get; set; }
 
     float spawnInterval = 5.0f;
@@ -14,13 +14,16 @@ public class EnemySpawner : Enemy {
 
     void Start () {
         slime = Resources.Load<Slime>("NPC/Enemies/Slime3");
-        healtBar = Resources.Load<Slider>("UI/EnemyHealthBar");
+        healthBar = Resources.Load<Slider>("UI/EnemyHealthBar");
         enemyContainer = GameObject.Find("Enemies");
 
-
-        Slider newHealthBar = Instantiate(healtBar);
+        Slider newHealthBar = Instantiate(healthBar);
         newHealthBar.transform.SetParent(enemyContainer.transform.Find("Canvas"), false);
+        newHealthBar.transform.Translate(0, 4, 2);
+        Vector3 upScale = new Vector3(0.2f, 0.2f, 0.2f);
+        newHealthBar.transform.localScale = upScale;
         transform.GetComponent<EnemyHealth>().healthBar = newHealthBar;
+        transform.GetComponent<EnemyHealth>().SetMaxHealth(400);
     }
 	
 	void Update () {
@@ -36,7 +39,8 @@ public class EnemySpawner : Enemy {
         Slime newSlime = Instantiate(slime);
         newSlime.transform.position = transform.position;
         newSlime.transform.SetParent(enemyContainer.transform, true);
-        Slider newHealthBar = Instantiate(healtBar);
+        GameController.EnemySpawned();
+        Slider newHealthBar = Instantiate(healthBar);
         newHealthBar.transform.SetParent(enemyContainer.transform.Find("Canvas"), false);
         newSlime.GetComponent<EnemyHealth>().healthBar = newHealthBar;
         newSlime.player = GameObject.Find("Player");

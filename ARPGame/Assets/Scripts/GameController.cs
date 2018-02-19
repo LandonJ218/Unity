@@ -5,36 +5,91 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
-    public int gameDifficulty;
+    public static int gameDifficulty;
+    public static bool gameWon;
 
-    private int portalCount;
+    private static int portalCount = 0;
+    private static int enemyCount = 0;
 
-	// Use this for initialization
-	void Awake () {
+
+    // Use this for initialization
+    void Awake ()
+    {
         DontDestroyOnLoad(gameObject);
 	}
 
     //handles button onClick() and loads scene based on its selected index number found in build settings
-    public void StartGame(int difficulty)
+    public static void StartGame(int difficulty)
     {
         gameDifficulty = difficulty;
         SceneManager.LoadScene(1);
-        UIEventHandler.OnPortalsSpawned += PortalsSpawned;
-        UIEventHandler.OnPortalDestroyed += PortalDestroyed;
     }
 
-    private void PortalsSpawned()
+    public static void PortalSpawned()
     {
-        portalCount = GameObject.Find("Portals").transform.childCount;
-        //UIPortalCount.text = portalCount.ToString();
+        portalCount++;
+        UIEventHandler.PortalSpawned();
     }
-    
-    private void PortalDestroyed()
+
+    public static void EnemySpawned()
+    {
+        enemyCount++;
+    }
+
+    public static void PlayerDied()
+    {
+        EndGame(false);
+    }
+
+    public static void PortalDestroyed()
     {
         portalCount--;
         if(portalCount < 1)
         {
-            // Player Wins   still need an in game window to pop up
+            if(enemyCount > 0)
+            {
+                UIEventHandler.AllPortalsDestroyed();
+            }
+            else
+            {
+                EndGame(true);
+            }
         }
+        else
+        {
+            UIEventHandler.PortalDestroyed();
+        }
+    }
+
+    public static void EnemyKilled()
+    {
+        enemyCount--;
+        if (portalCount < 1)
+        {
+            if (enemyCount < 1)
+            {
+                EndGame(true);
+            }
+            else
+            {
+                UIEventHandler.EnemyKilled();
+            }
+        }
+    }
+
+    public static void EndGame(bool gameWon)
+    {
+        GameController.gameWon = gameWon;
+        SceneManager.LoadScene(2);
+    }
+
+    public static int GetPortalCount()
+    {
+        return portalCount;
+    }
+
+    public static int GetEnemyCount()
+    {
+        return enemyCount;
     }
 }

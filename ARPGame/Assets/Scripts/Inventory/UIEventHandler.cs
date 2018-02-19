@@ -10,8 +10,10 @@ public class UIEventHandler : MonoBehaviour {
     public static event ItemEventHandler OnItemEquipped;
     public static event ItemEventHandler OnItemUnequipped;
     public delegate void CombatEventHandler();
+    public static event CombatEventHandler OnPortalSpawned;
     public static event CombatEventHandler OnPortalDestroyed;
-    public static event CombatEventHandler OnPortalsSpawned;
+    public static event CombatEventHandler OnAllPortalsDestroyed;
+    public static event CombatEventHandler OnEnemyKilled;
 
     public static void ItemAddedToInventory(InventoryItem item)
     {
@@ -33,13 +35,23 @@ public class UIEventHandler : MonoBehaviour {
         OnItemUnequipped(item);
     }
 
+    public static void PortalSpawned()
+    {
+        OnPortalSpawned();
+    }
+
     public static void PortalDestroyed()
     {
         OnPortalDestroyed();
     }
 
-    public static void PortalsSpawned()
+    public static void AllPortalsDestroyed()
     {
-        OnPortalsSpawned();
+        OnAllPortalsDestroyed();
+    }
+
+    public static void EnemyKilled()
+    {
+        OnEnemyKilled();
     }
 }

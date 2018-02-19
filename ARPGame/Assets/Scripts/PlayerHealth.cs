@@ -59,7 +59,8 @@ public sealed class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log(gameObject.name + " is dead!");
+        gameObject.GetComponent<PlayerController>().enabled = false;
+        GameController.PlayerDied();
     }
 
 }

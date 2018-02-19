@@ -29,6 +29,7 @@ public class EnemyHealth : MonoBehaviour {
     {
         return maxHealth;
     }
+
     public void SetMaxHealth(int healthBonus)
     {
         maxHealth += healthBonus;
@@ -49,7 +50,11 @@ public class EnemyHealth : MonoBehaviour {
     {
         if(gameObject.GetComponent<EnemySpawner>() != null)
         {
-            UIEventHandler.PortalDestroyed();
+            GameController.PortalDestroyed();
+        }
+        if (gameObject.GetComponent<Slime>() != null)
+        {
+            GameController.EnemyKilled();
         }
         Destroy(healthBar.gameObject);
         Destroy(gameObject);
